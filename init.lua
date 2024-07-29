@@ -30,6 +30,9 @@ require("mason-lspconfig").setup_handlers({
 -- highlight on search
 vim.o.hlsearch = false
 
+-- incremental search
+vim.o.incsearch = true
+
 -- line number
 vim.wo.number = true
 
