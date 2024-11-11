@@ -2,7 +2,10 @@ return {
 	"nvim-lualine/lualine.nvim",
 	dependencies = { "nvim-tree/nvim-web-devicons" },
 	opts = {
-		theme = "catppuccin",
+		options = {
+			theme = "catppuccin",
+			globalstatus = true,
+		},
 		sections = {
 			lualine_a = { "mode" },
 			lualine_b = { "branch" },
