@@ -79,3 +79,4 @@ vim.o.expandtab = true
 vim.o.exrc = true
 
 require("keymap")
+require("tree-sitter-blade")
