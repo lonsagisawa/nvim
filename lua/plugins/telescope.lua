@@ -28,7 +28,13 @@ return {
 		},
 	},
 	keys = {
-		{ "<leader><leader>", "<cmd>Telescope smart_open<cr>", desc = "Fuzzy finder" },
-		{ "<leader>ss", "<cmd>Telescope lsp_dynamic_workspace_symbols<cr>", desc = "Search Symbols" },
+		{ "<leader><leader>", "<cmd>Telescope smart_open<cr>",           desc = "Fuzzy finder" },
+		{ "<leader>sg",       "<cmd>Telescope live_grep<cr>",            desc = "Live grep" },
+		-- LSP
+		{ "<leader>ss",       "<cmd>Telescope lsp_document_symbols<cr>", desc = "Search Symbols" },
+		{ "gr",               "<cmd>Telescope lsp_references<cr>",       desc = "References" },
+		{ "gd",               "<cmd>Telescope lsp_definitions<cr>",      desc = "Definitions" },
+		{ "gt",               "<cmd>Telescope lsp_type_definition<cr>",  desc = "Type definitions" },
+		{ "gi",               "<cmd>Telescope lsp_implementations<cr>",  desc = "Implementations" },
 	},
 }
