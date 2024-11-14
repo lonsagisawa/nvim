@@ -34,7 +34,8 @@ vim.o.hlsearch = false
 vim.o.incsearch = true
 
 -- line number
-vim.wo.number = true
+vim.o.number = true
+vim.o.relativenumber = true
 
 -- mouse
 vim.o.mouse = "a"
@@ -53,14 +54,14 @@ vim.o.ignorecase = true
 vim.o.smartcase = true
 
 -- signcolumn
-vim.wo.signcolumn = "yes"
+vim.o.signcolumn = "yes"
 
 -- decrease update time
 vim.o.updatetime = 250
 vim.o.timeoutlen = 300
 
 -- better completion
-vim.o.completeopt = "menuone,noselect"
+vim.o.completeopt = "menu,menuone,noselect"
 
 -- true color
 vim.o.termguicolors = true
@@ -74,6 +75,18 @@ vim.o.cursorline = true
 -- space indent by default
 vim.o.tabstop = 4
 vim.o.expandtab = true
+
+-- Smart indent
+vim.o.smartindent = true
+
+-- Round indent
+vim.o.shiftround = true
+
+-- show invisible characters
+vim.o.list = true
+
+-- scrolloff
+vim.o.scrolloff = 8
 
 -- exrc
 vim.o.exrc = true
