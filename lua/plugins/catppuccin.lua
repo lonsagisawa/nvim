@@ -26,8 +26,8 @@ return {
 					ok = { "italic" },
 				},
 				underlines = {
-					errors = { "underline" },
-					hints = { "underline" },
+					errors = { "undercurl" },
+					hints = { "underdouble" },
 					warnings = { "underline" },
 					information = { "underline" },
 					ok = { "underline" },
@@ -45,7 +45,4 @@ return {
 			which_key = true,
 		},
 	},
-	config = function()
-		vim.cmd.colorscheme("catppuccin")
-	end,
 }

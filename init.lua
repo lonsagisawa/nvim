@@ -27,6 +27,9 @@ require("mason-lspconfig").setup_handlers({
 	end,
 })
 
+-- set colorscheme
+vim.cmd.colorscheme("catppuccin")
+
 -- highlight on search
 vim.o.hlsearch = false
 
