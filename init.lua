@@ -2,23 +2,7 @@ vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
 -- lazy.nvim
-local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
-if not (vim.uv or vim.loop).fs_stat(lazypath) then
-	vim.fn.system({
-		"git",
-		"clone",
-		"--filter=blob:none",
-		"https://github.com/folke/lazy.nvim.git",
-		"--branch=stable", -- latest stable release
-		lazypath,
-	})
-end
-vim.opt.rtp:prepend(lazypath)
-
--- import plugin settings
-require("lazy").setup({
-	{ import = "plugins" },
-}, {})
+require("config.lazy")
 
 -- setup lsp
 require("mason-lspconfig").setup_handlers({
@@ -94,5 +78,5 @@ vim.o.scrolloff = 8
 -- exrc
 vim.o.exrc = true
 
-require("keymap")
-require("tree-sitter-blade")
+require("config.keymap")
+require("config.tree-sitter-blade")
