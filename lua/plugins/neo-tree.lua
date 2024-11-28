@@ -11,5 +11,6 @@ return {
 		window = {
 			position = "left",
 		},
+		use_libuv_file_watcher = true,
 	},
 }
