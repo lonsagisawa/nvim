@@ -4,15 +4,23 @@ return {
 	opts = {
 		options = {
 			theme = "catppuccin",
+			section_separators = {
+				left = "",
+				right = "",
+			},
+			component_separators = "",
 			globalstatus = true,
 		},
 		sections = {
 			lualine_a = { "mode" },
 			lualine_b = { "branch" },
-			lualine_c = { "diff", "diagnostics" },
+			lualine_c = {
+				{ "filetype", icon_only = true, padding = { left = 2, right = 0 } },
+				{ "filename", padding = 0 },
+			},
 			lualine_x = {},
-			lualine_y = { "filetype" },
-			lualine_z = { "location" },
+			lualine_y = { "diff", "diagnostics" },
+			lualine_z = { "location", "progress" },
 		},
 		extensions = {
 			"lazy",
