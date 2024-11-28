@@ -53,9 +53,6 @@ vim.o.completeopt = "menu,menuone,noselect"
 -- true color
 vim.o.termguicolors = true
 
--- global statusline
-vim.o.laststatus = 3
-
 -- current line
 vim.o.cursorline = true
 
@@ -73,7 +70,7 @@ vim.o.shiftround = true
 vim.o.list = true
 
 -- scrolloff
-vim.o.scrolloff = 8
+vim.o.scrolloff = 12
 
 -- exrc
 vim.o.exrc = true
