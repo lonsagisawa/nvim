@@ -1,7 +1,13 @@
 return {
 	"folke/which-key.nvim",
 	event = "VeryLazy",
-	opts = {},
+	opts = {
+		preset = "helix",
+		win = {
+			padding = { 1, 5 },
+			title = false,
+		},
+	},
 	keys = {
 		{
 			"<leader>?",
