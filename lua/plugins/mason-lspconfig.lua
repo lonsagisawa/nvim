@@ -13,6 +13,7 @@ return {
 			"intelephense",
 			"lua_ls",
 			"marksman",
+			"phpcs",
 			"svelte",
 			"tailwindcss",
 			"unocss",
