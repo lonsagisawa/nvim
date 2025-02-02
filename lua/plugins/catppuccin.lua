@@ -14,7 +14,6 @@ return {
 			mini = {
 				enabled = true,
 			},
-			neotree = true,
 			noice = true,
 			native_lsp = {
 				enabled = true,
@@ -37,6 +36,7 @@ return {
 				},
 			},
 			notify = true,
+			nvimtree = true,
 			treesitter_context = true,
 			treesitter = true,
 			telescope = {

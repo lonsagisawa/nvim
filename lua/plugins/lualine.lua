@@ -25,7 +25,7 @@ return {
 		extensions = {
 			"lazy",
 			"mason",
-			"neo-tree",
+			"nvim-tree",
 		},
 	},
 }
