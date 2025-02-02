@@ -81,3 +81,4 @@ vim.o.exrc = true
 
 require("config.keymap")
 require("config.tree-sitter-blade")
+require("config.laravel-ls")
