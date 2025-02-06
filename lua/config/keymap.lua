@@ -18,7 +18,6 @@ vim.keymap.set("v", ">", ">gv")
 -- https://zenn.dev/botamotch/articles/21073d78bc68bf#.config%2Fnvim%2Finit.lua
 vim.keymap.set('n', 'K', '<cmd>lua vim.lsp.buf.hover()<CR>', { desc = 'Hover' })
 vim.keymap.set('n', 'gf', '<cmd>lua vim.lsp.buf.formatting()<CR>', { desc = 'Format buffer using LS' })
-vim.keymap.set('n', 'gD', '<cmd>lua vim.lsp.buf.declaration()<CR>', { desc = 'Go to declaration' })
 vim.keymap.set('n', 'gn', '<cmd>lua vim.lsp.buf.rename()<CR>', { desc = 'Refactor: rename' })
 vim.keymap.set('n', 'ga', '<cmd>lua vim.lsp.buf.code_action()<CR>', { desc = 'Code action' })
 vim.keymap.set('n', 'ge', '<cmd>lua vim.diagnostic.open_float()<CR>')
