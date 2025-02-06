@@ -27,6 +27,9 @@ return {
 			enabled = true,
 			replace_netrw = true,
 		},
+		terminal = {
+			enabled = true,
+		}
 	},
 	keys = {
 		{
@@ -100,6 +103,14 @@ return {
 				Snacks.explorer()
 			end,
 			desc = "Explorer",
+		},
+
+		{
+			"<leader>t",
+			function()
+				Snacks.terminal.toggle()
+			end,
+			desc = "Terminal"
 		}
 	}
 }
