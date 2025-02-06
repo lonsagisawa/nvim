@@ -6,7 +6,6 @@ return {
 		flavour = "macchiato",
 		integrations = {
 			cmp = true,
-			dashboard = true,
 			flash = true,
 			gitsigns = true,
 			markdown = true,

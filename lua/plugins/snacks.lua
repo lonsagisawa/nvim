@@ -23,9 +23,6 @@ return {
 			enabled = true,
 			replace_netrw = true,
 		},
-		dashboard = {
-			enable = true
-		}
 	},
 	keys = {
 		{
