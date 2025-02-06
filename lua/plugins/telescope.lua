@@ -10,25 +10,13 @@ return {
 			},
 		})
 		require("telescope").load_extension("fzf")
-		require("telescope").load_extension("smart_open")
 	end,
 	dependencies = {
 		"nvim-lua/plenary.nvim",
 		"BurntSushi/ripgrep",
-		{
-			"danielfalk/smart-open.nvim",
-			branch = "0.2.x",
-			dependencies = {
-				"kkharji/sqlite.lua",
-				{
-					"nvim-telescope/telescope-fzf-native.nvim",
-					build = "make",
-				},
-			},
-		},
+		"nvim-telescope/telescope-fzf-native.nvim",
 	},
 	keys = {
-		{ "<leader><leader>", "<cmd>Telescope smart_open<cr>",           desc = "Fuzzy finder" },
 		{ "<leader>sg",       "<cmd>Telescope live_grep<cr>",            desc = "Live grep" },
 		-- LSP
 		{ "<leader>ss",       "<cmd>Telescope lsp_document_symbols<cr>", desc = "Search Symbols" },

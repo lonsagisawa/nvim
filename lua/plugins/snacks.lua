@@ -10,6 +10,9 @@ return {
 		lazygit = {
 			enabled = true,
 		},
+		picker = {
+			enabled = true,
+		}
 	},
 	keys = {
 		{
@@ -19,5 +22,12 @@ return {
 			end,
 			desc = "LazyGit"
 		},
+		{
+			"<leader><leader>",
+			function()
+				Snacks.picker.smart()
+			end,
+			desc = "Smart picker"
+		}
 	}
 }
