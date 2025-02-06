@@ -10,6 +10,11 @@ return {
 			},
 			component_separators = "",
 			globalstatus = true,
+			disabled_filetypes = {
+				winbar = {
+					"NvimTree",
+				},
+			},
 		},
 		sections = {
 			lualine_a = { "mode" },
@@ -29,13 +34,13 @@ return {
 		},
 		winbar = {
 			lualine_z = {
-				{ "filetype", icon_only = true, padding = { left = 1, right = 0 } },
+				{ "filetype", padding = { left = 1, right = 0 }, icon_only = true },
 				{ "filename", padding = { left = 0, right = 1 } },
 			},
 		},
 		inactive_winbar = {
 			lualine_z = {
-				{ "filetype", icon_only = true, padding = { left = 1, right = 0 } },
+				{ "filetype", padding = { left = 1, right = 0 }, icon_only = true },
 				{ "filename", padding = { left = 0, right = 1 } },
 			},
 		},
