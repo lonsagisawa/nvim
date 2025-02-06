@@ -29,7 +29,11 @@ return {
 		},
 		terminal = {
 			enabled = true,
-		}
+		},
+		notifier = {
+			style = "minimal",
+			top_down = false,
+		},
 	},
 	keys = {
 		{
