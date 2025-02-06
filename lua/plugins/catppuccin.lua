@@ -6,7 +6,7 @@ return {
 		flavour = "macchiato",
 		integrations = {
 			aerial = true,
-			cmp = true,
+			blink_cmp = true,
 			flash = true,
 			gitsigns = true,
 			markdown = true,

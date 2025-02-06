@@ -1,6 +1,6 @@
 return {
 	"danymat/neogen",
 	opts = {
-		snippet_engine = "luasnip",
+		snippet_engine = "nvim",
 	},
 }
