@@ -12,6 +12,12 @@ return {
 		},
 		picker = {
 			enabled = true,
+		},
+		indent = {
+			enabled = true,
+			chunk = {
+				enabled = true,
+			},
 		}
 	},
 	keys = {
