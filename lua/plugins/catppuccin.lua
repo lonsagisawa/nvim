@@ -5,6 +5,7 @@ return {
 	opts = {
 		flavour = "macchiato",
 		integrations = {
+			aerial = true,
 			cmp = true,
 			flash = true,
 			gitsigns = true,
