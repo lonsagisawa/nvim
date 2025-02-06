@@ -14,7 +14,6 @@ return {
 			mini = {
 				enabled = true,
 			},
-			noice = true,
 			native_lsp = {
 				enabled = true,
 				virtual_text = {
@@ -35,7 +34,6 @@ return {
 					background = true,
 				},
 			},
-			notify = true,
 			snacks = true,
 			treesitter_context = true,
 			treesitter = true,
