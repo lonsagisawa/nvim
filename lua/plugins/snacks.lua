@@ -18,7 +18,11 @@ return {
 			chunk = {
 				enabled = true,
 			},
-		}
+		},
+		explorer = {
+			enabled = true,
+			replace_netrw = true,
+		},
 	},
 	keys = {
 		{
@@ -34,6 +38,13 @@ return {
 				Snacks.picker.smart()
 			end,
 			desc = "Smart picker"
+		},
+		{
+			"<leader>e",
+			function()
+				Snacks.explorer()
+			end,
+			desc = "Explorer",
 		}
 	}
 }

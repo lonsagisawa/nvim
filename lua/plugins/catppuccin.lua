@@ -36,7 +36,6 @@ return {
 				},
 			},
 			notify = true,
-			nvimtree = true,
 			snacks = true,
 			treesitter_context = true,
 			treesitter = true,
