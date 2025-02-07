@@ -19,10 +19,7 @@ return {
 		sections = {
 			lualine_a = { "mode" },
 			lualine_b = { "branch" },
-			lualine_c = {
-				{ "filetype", icon_only = true, padding = { left = 2, right = 0 } },
-				{ "filename", padding = 0 },
-			},
+			lualine_c = {},
 			lualine_x = {},
 			lualine_y = { "diff", "diagnostics" },
 			lualine_z = { "location", "progress" },
@@ -33,7 +30,7 @@ return {
 			"nvim-tree",
 		},
 		winbar = {
-			lualine_c = {
+			lualine_b = {
 				"navic",
 			},
 			lualine_z = {
@@ -42,6 +39,9 @@ return {
 			},
 		},
 		inactive_winbar = {
+			lualine_b = {
+				"navic",
+			},
 			lualine_z = {
 				{ "filetype", padding = { left = 1, right = 0 }, icon_only = true },
 				{ "filename", padding = { left = 0, right = 1 } },
