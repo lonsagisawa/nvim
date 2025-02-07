@@ -33,6 +33,9 @@ return {
 			"nvim-tree",
 		},
 		winbar = {
+			lualine_c = {
+				"navic",
+			},
 			lualine_z = {
 				{ "filetype", padding = { left = 1, right = 0 }, icon_only = true },
 				{ "filename", padding = { left = 0, right = 1 } },

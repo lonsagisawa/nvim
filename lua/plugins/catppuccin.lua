@@ -34,6 +34,9 @@ return {
 					background = true,
 				},
 			},
+			navic = {
+				enabled = true,
+			},
 			nvimtree = true,
 			snacks = true,
 			treesitter_context = true,
