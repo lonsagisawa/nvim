@@ -12,6 +12,25 @@ return {
 		},
 		picker = {
 			enabled = true,
+			layout = {
+				reverse = true,
+				layout = {
+					box = "horizontal",
+					width = 0.9,
+					height = 0.9,
+					{
+						box = "vertical",
+						border = "rounded",
+						{ win = "list", border = "none" },
+						{ win = "input", height = 1, border = "top", title = "{title} {live} {flags}", title_pos = "center" },
+					},
+					{
+						win = "preview",
+						width = 0.55,
+						border = "rounded",
+					},
+				},
+			},
 		},
 		indent = {
 			chunk = {
