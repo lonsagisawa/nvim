@@ -13,6 +13,7 @@ return {
 			disabled_filetypes = {
 				winbar = {
 					"NvimTree",
+					"no-neck-pain",
 				},
 			},
 		},
