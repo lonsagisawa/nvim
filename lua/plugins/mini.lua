@@ -15,6 +15,9 @@ return {
 				go_in_plus = "l",
 				go_out_plus = "h",
 			},
+			options = {
+				use_as_default_explorer = false,
+			},
 		})
 
 		vim.api.nvim_create_autocmd("BufWritePre", {
