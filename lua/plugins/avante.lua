@@ -14,6 +14,9 @@ return {
 				model = "deepseek-r1-distill-llama-70b",
 			},
 		},
+		file_selector = {
+			provider = "snacks",
+		},
 	},
 	-- if you want to build from source then do `make BUILD_FROM_SOURCE=true`
 	build = "make",
