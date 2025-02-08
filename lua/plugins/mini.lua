@@ -22,8 +22,8 @@ return {
 
 		vim.api.nvim_create_autocmd("BufWritePre", {
 			callback = function()
-				require("mini.trailspace").trim()
-				require("mini.trailspace").trim_last_lines()
+				MiniTrailspace.trim()
+				MiniTrailspace.trim_last_lines()
 			end,
 		})
 	end,
