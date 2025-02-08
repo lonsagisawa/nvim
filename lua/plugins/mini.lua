@@ -1,8 +1,10 @@
 return {
-	"echasnovski/mini.trailspace",
+	"echasnovski/mini.nvim",
 	version = false,
-	opts = {},
 	config = function()
+		require("mini.cursorword").setup()
+		require("mini.trailspace").setup()
+
 		vim.api.nvim_create_autocmd("BufWritePre", {
 			callback = function()
 				require("mini.trailspace").trim()
