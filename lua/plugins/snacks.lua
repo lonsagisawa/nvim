@@ -50,7 +50,11 @@ return {
 			top_down = false,
 		},
 		dashboard = {
-			enabled = true,
+			sections = {
+				{ section = "startup" },
+				{ section = "keys", gap = 1 },
+				{ icon = " ", title = "Projects", section = "projects", indent = 2, padding = 2 },
+			},
 		},
 	},
 	keys = {
