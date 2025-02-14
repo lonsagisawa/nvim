@@ -11,7 +11,7 @@ return {
 			enabled = true,
 		},
 		picker = {
-			enabled = true,
+			hidden = true,
 			layout = {
 				reverse = true,
 				layout = {
@@ -34,7 +34,6 @@ return {
 		},
 		indent = {
 			chunk = {
-				enabled = true,
 				char = {
 					corner_top = "╭",
 					corner_bottom = "╰",
