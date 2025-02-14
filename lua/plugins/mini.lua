@@ -11,9 +11,7 @@ return {
 
 		require("mini.files").setup({
 			mappings = {
-				close = "<ESC>",
 				go_in_plus = "l",
-				go_out_plus = "h",
 			},
 			options = {
 				use_as_default_explorer = false,
