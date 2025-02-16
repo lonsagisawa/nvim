@@ -9,11 +9,7 @@ vim.g.maplocalleader = " "
 require("config.lazy")
 
 -- setup lsp
-require("mason-lspconfig").setup_handlers({
-	function(server_name)
-		require("lspconfig")[server_name].setup({})
-	end,
-})
+require("config.lsp")
 
 -- set colorscheme
 vim.cmd.colorscheme("catppuccin")
