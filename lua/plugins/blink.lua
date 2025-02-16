@@ -28,8 +28,6 @@ return {
 		sources = {
 			default = { "lsp", "path", "snippets", "buffer", "avante_commands", "avante_mentions", "avante_files" },
 
-			cmdline = {},
-
 			providers = {
 				avante_commands = {
 					name = "avante_commands",
