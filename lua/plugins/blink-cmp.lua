@@ -15,14 +15,14 @@ return {
 	---@module 'blink.cmp'
 	---@type blink.cmp.Config
 	opts = {
-		enabled = function()
-			return vim.bo.buftype == "" and vim.fn.expand("%:p") ~= ""
-		end,
-
 		keymap = { preset = "enter" },
 
 		appearance = {
 			nerd_font_variant = "normal",
+		},
+
+		cmdline = {
+			enabled = false,
 		},
 
 		sources = {
