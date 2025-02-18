@@ -34,6 +34,8 @@ return {
 		},
 		indent = {
 			chunk = {
+				enabled = true,
+
 				char = {
 					corner_top = "╭",
 					corner_bottom = "╰",
