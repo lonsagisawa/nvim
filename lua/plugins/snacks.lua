@@ -50,13 +50,6 @@ return {
 			style = "minimal",
 			top_down = false,
 		},
-		dashboard = {
-			sections = {
-				{ section = "startup" },
-				{ section = "keys", gap = 1 },
-				{ icon = " ", title = "Projects", section = "projects", indent = 2, padding = 2 },
-			},
-		},
 	},
 	keys = {
 		-- Lazygit
