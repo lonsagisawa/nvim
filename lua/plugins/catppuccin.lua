@@ -34,16 +34,12 @@ return {
 					background = true,
 				},
 			},
-			navic = {
+			snacks = {
 				enabled = true,
+				indent_scope_color = "lavender",
 			},
-			nvimtree = true,
-			snacks = true,
 			treesitter_context = true,
 			treesitter = true,
-			telescope = {
-				enabled = true,
-			},
 			which_key = true,
 		},
 	},
