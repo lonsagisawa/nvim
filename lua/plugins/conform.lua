@@ -20,7 +20,13 @@ return {
 		-- Define your formatters
 		formatters_by_ft = {
 			lua = { "stylua" },
-			javascript = { "prettierd", "prettier", stop_after_first = true },
+			php = { "pint", "php-cs-fixer", stop_after_first = true },
+			javascript = { "biome", "prettier", stop_after_first = true },
+			typescript = { "biome", "prettier", stop_after_first = true },
+			javascriptreact = { "biome", "prettier", stop_after_first = true },
+			typescriptreact = { "biome", "prettier", stop_after_first = true },
+			vue = { "prettier" },
+			svelte = { "prettier" },
 		},
 		-- Set default options
 		default_format_opts = {
