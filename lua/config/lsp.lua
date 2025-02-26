@@ -25,6 +25,12 @@ require("mason-lspconfig").setup_handlers({
 		require("lspconfig")[server_name].setup({})
 	end,
 
+	["html"] = function()
+		require("lspconfig").html.setup({
+			filetypes = { "html", "blade" },
+		})
+	end,
+
 	["vtsls"] = function()
 		require("lspconfig").vtsls.setup({
 			filetypes = { "typescript", "javascript", "javascriptreact", "typescriptreact", "vue" },
