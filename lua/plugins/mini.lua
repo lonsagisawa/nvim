@@ -36,7 +36,7 @@ return {
 				["["] = {
 					action = "open",
 					pair = "[]",
-					neigh_pattern = ".[%s%z%)}%]]",
+					neigh_pattern = ".[%s%z%\")}%]]",
 					register = { cr = false },
 					-- foo|bar -> press "[" -> foo[bar
 					-- foobar| -> press "[" -> foobar[]
@@ -46,12 +46,13 @@ return {
 					-- {|} -> press "[" -> {[]}
 					-- (|) -> press "[" -> ([])
 					-- [|] -> press "[" -> [[]]
+					-- "|" -> press "[" -> "[]"
 				},
 				["{"] = {
 					action = "open",
 					pair = "{}",
 					-- neigh_pattern = ".[%s%z%)}]",
-					neigh_pattern = ".[%s%z%)}%]]",
+					neigh_pattern = ".[%s%z%\")}%]]",
 					register = { cr = false },
 					-- foo|bar -> press "{" -> foo{bar
 					-- foobar| -> press "{" -> foobar{}
@@ -60,12 +61,13 @@ return {
 					-- foobar | -> press "{" -> foobar {}
 					-- (|) -> press "{" -> ({})
 					-- {|} -> press "{" -> {{}}
+					-- "|" -> press "{" -> "{}"
 				},
 				["("] = {
 					action = "open",
 					pair = "()",
 					-- neigh_pattern = ".[%s%z]",
-					neigh_pattern = ".[%s%z%)]",
+					neigh_pattern = ".[%s%z%\")]",
 					register = { cr = false },
 					-- foo|bar -> press "(" -> foo(bar
 					-- foobar| -> press "(" -> foobar()
