@@ -1,7 +1,6 @@
 return {
 	"nvim-lualine/lualine.nvim",
 	dependencies = {
-		"nvim-tree/nvim-web-devicons",
 		"lewis6991/gitsigns.nvim",
 	},
 	config = function()
@@ -29,10 +28,7 @@ return {
 		require("lualine").setup({
 			options = {
 				theme = "catppuccin",
-				section_separators = {
-					left = "",
-					right = "",
-				},
+				section_separators = "",
 				component_separators = "",
 				globalstatus = true,
 				disabled_filetypes = {

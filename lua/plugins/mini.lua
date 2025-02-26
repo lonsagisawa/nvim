@@ -9,6 +9,8 @@ return {
 		require("mini.ai").setup()
 		require("mini.surround").setup()
 
+		MiniIcons.mock_nvim_web_devicons()
+
 		require("mini.files").setup({
 			mappings = {
 				go_in_plus = "l",
