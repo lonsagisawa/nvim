@@ -80,4 +80,3 @@ vim.o.cmdheight = 0
 
 require("config.keymap")
 require("config.tree-sitter-blade")
-require("config.laravel-ls")
