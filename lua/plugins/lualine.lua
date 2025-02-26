@@ -1,6 +1,9 @@
 return {
 	"nvim-lualine/lualine.nvim",
-	dependencies = { "nvim-tree/nvim-web-devicons" },
+	dependencies = {
+		"nvim-tree/nvim-web-devicons",
+		"lewis6991/gitsigns.nvim",
+	},
 	config = function()
 		-- https://qiita.com/uhooi/items/99aeff822d4870a8e269
 		local component__lsp_names = function()
@@ -10,6 +13,17 @@ return {
 				end)
 				:totable()
 			return " " .. table.concat(clients, ", ")
+		end
+
+		local function diff_source()
+			local gitsigns = vim.b.gitsigns_status_dict
+			if gitsigns then
+				return {
+					added = gitsigns.added,
+					modified = gitsigns.changed,
+					removed = gitsigns.removed,
+				}
+			end
 		end
 
 		require("lualine").setup({
@@ -30,10 +44,10 @@ return {
 			},
 			sections = {
 				lualine_a = { "mode" },
-				lualine_b = { "branch", component__lsp_names },
+				lualine_b = { { "b:gitsigns_head", icon = "" }, component__lsp_names },
 				lualine_c = {},
 				lualine_x = {},
-				lualine_y = { "diff", "diagnostics" },
+				lualine_y = { { "diff", source = diff_source }, "diagnostics" },
 				lualine_z = { "location", "progress" },
 			},
 			extensions = {
