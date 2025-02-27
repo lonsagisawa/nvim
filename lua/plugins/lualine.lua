@@ -40,8 +40,8 @@ return {
 			},
 			sections = {
 				lualine_a = { "mode" },
-				lualine_b = { { "b:gitsigns_head", icon = "" }, component__lsp_names },
-				lualine_c = {},
+				lualine_b = { { "b:gitsigns_head", icon = "" } },
+				lualine_c = { component__lsp_names },
 				lualine_x = {},
 				lualine_y = { { "diff", source = diff_source }, "diagnostics" },
 				lualine_z = { "location", "progress" },
@@ -56,7 +56,7 @@ return {
 					{ "aerial", sep = "  " },
 				},
 				lualine_z = {
-					{ "filetype", padding = { left = 1, right = 0 }, icon_only = true },
+					{ "filetype", padding = { left = 1, right = 0 }, colored = false, icon_only = true },
 					{ "filename", padding = { left = 0, right = 1 } },
 				},
 			},
@@ -65,7 +65,7 @@ return {
 					{ "aerial", sep = "  " },
 				},
 				lualine_z = {
-					{ "filetype", padding = { left = 1, right = 0 }, icon_only = true },
+					{ "filetype", padding = { left = 1, right = 0 }, colored = false, icon_only = true },
 					{ "filename", padding = { left = 0, right = 1 } },
 				},
 			},
