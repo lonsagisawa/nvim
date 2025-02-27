@@ -57,7 +57,7 @@ return {
 				},
 				lualine_z = {
 					{ "filetype", padding = { left = 1, right = 0 }, colored = false, icon_only = true },
-					{ "filename", padding = { left = 0, right = 1 } },
+					{ "filename", padding = { left = 0, right = 1 }, symbols = { unnamed = ' [No Name]' } },
 				},
 			},
 			inactive_winbar = {
