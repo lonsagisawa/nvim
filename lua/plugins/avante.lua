@@ -13,6 +13,14 @@ return {
 				-- model = "llama-3.3-70b-versatile",
 				model = "deepseek-r1-distill-llama-70b",
 			},
+			pplx = {
+				__inherited_from = "openai",
+				api_key_name = "PPLX_API_KEY",
+				endpoint = "https://api.perplexity.ai",
+				-- R1 1776 model
+				-- https://docs.perplexity.ai/guides/model-cards
+				model = "r1-1776",
+			},
 		},
 		file_selector = {
 			provider = "snacks",
