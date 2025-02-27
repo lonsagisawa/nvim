@@ -52,7 +52,7 @@ return {
 				"nvim-tree",
 			},
 			winbar = {
-				lualine_b = {
+				lualine_c = {
 					{ "aerial", sep = "  " },
 				},
 				lualine_z = {
@@ -61,7 +61,7 @@ return {
 				},
 			},
 			inactive_winbar = {
-				lualine_b = {
+				lualine_c = {
 					{ "aerial", sep = "  " },
 				},
 				lualine_z = {
