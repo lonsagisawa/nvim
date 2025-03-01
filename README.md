@@ -3,15 +3,9 @@
 ## laravel-ls
 
 ```shell
-# install go
-mise use --global go@latest
-
-# Clone and build
-git clone git@github.com:laravel-ls/laravel-ls.git
-cd laravel-ls
-make
-
-# make link
-mkdir -p ~/.local/bin
-ln -sf ~/laravel-ls/build/laravel-ls ~/.local/bin
+mise use --global go:github.com/laravel-ls/laravel-ls/cmd/laravel-ls@latest
 ```
+
+## Avante
+
+Currently it utilises `gemini-2.0-flash`. Set enviroment variable `GEMINI_API_KEY` for Gemini API key.

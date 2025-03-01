@@ -4,8 +4,24 @@ return {
 	lazy = false,
 	version = false,
 	opts = {
-		provider = "groq",
+		-- Providers: gemini, gemini_lite, groq, pplx, ollama
+		provider = "gemini",
+		gemini = {
+			model = "gemini-2.0-flash",
+			max_tokens = 8192,
+		},
 		vendors = {
+			gemini_lite = {
+				__inherited_from = "gemini",
+				model = "gemini-2.0-flash-lite",
+				max_tokens = 8192,
+			},
+			ollama = {
+				__inherited_from = "openai",
+				api_key_name = "",
+				endpoint = "http://127.0.0.1:11434/v1",
+				model = "qwen2.5-coder:7b",
+			},
 			groq = {
 				__inherited_from = "openai",
 				api_key_name = "GROQ_API_KEY",
