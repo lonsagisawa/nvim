@@ -21,6 +21,9 @@ return {
 			mappings = {
 				go_in_plus = "l",
 			},
+			options = {
+				use_as_default_explorer = false,
+			},
 		})
 
 		-- https://gist.github.com/tmerse/dc21ec932860013e56882f23ee9ad8d2
