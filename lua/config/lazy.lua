@@ -28,4 +28,4 @@ require("lazy").setup({
 })
 
 -- Open lazy.nvim
-vim.keymap.set({ "n", "x" }, "<leader>l", require("lazy").show, { desc = "Open lazy.nvim" })
+vim.keymap.set({ "n", "x" }, "<leader>ll", require("lazy").show, { desc = "Open lazy.nvim" })
