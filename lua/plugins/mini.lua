@@ -2,6 +2,12 @@ return {
 	"echasnovski/mini.nvim",
 	version = false,
 	config = function()
+		require("mini.basics").setup({
+			options = {
+				extra_ui = true,
+			},
+		})
+
 		require("mini.cursorword").setup()
 		require("mini.trailspace").setup()
 		require("mini.splitjoin").setup()
