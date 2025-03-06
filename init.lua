@@ -78,5 +78,7 @@ vim.o.exrc = true
 -- autohide cmdline
 vim.o.cmdheight = 0
 
+vim.o.winblend = 0
+
 require("config.keymap")
 require("config.tree-sitter-blade")
