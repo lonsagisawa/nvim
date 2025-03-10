@@ -33,6 +33,10 @@ return {
 			},
 		},
 		indent = {
+			animate = {
+				enabled = false,
+			},
+
 			chunk = {
 				enabled = true,
 
