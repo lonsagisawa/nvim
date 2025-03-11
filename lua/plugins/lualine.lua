@@ -33,7 +33,7 @@ return {
 		require("lualine").setup({
 			options = {
 				theme = "catppuccin",
-				section_separators = "",
+				section_separators = { left = "", right = "" },
 				component_separators = "",
 				globalstatus = true,
 				disabled_filetypes = {
@@ -48,8 +48,15 @@ return {
 				lualine_b = { { "b:gitsigns_head", icon = "" } },
 				lualine_c = {},
 				lualine_x = { component__lsp_names },
-				lualine_y = { { "diff", source = diff_source }, "diagnostics" },
-				lualine_z = { "progress" },
+				lualine_y = {
+					{
+						"diff",
+						source = diff_source,
+						symbols = { added = " ", modified = " " , removed = " " },
+					},
+					"diagnostics",
+				},
+				lualine_z = { "location" },
 			},
 			extensions = {
 				"lazy",
