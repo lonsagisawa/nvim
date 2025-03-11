@@ -2,6 +2,6 @@ return {
 	"stevearc/aerial.nvim",
 	opts = {},
 	keys = {
-		{ "<leader>o", "<cmd>AerialToggle!<CR>", desc = "code Outline with aerial" }
+		{ "<leader>so", function() require("aerial").snacks_picker() end, desc = "code Outline with aerial" }
 	}
 }
