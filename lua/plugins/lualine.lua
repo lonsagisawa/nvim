@@ -11,7 +11,12 @@ return {
 					return client.name
 				end)
 				:totable()
-			return " " .. table.concat(clients, ", ")
+
+			if next(clients) == nil then
+				return ""
+			end
+
+			return "󰒓 " .. table.concat(clients, ", ")
 		end
 
 		local function diff_source()
@@ -41,10 +46,10 @@ return {
 			sections = {
 				lualine_a = { "mode" },
 				lualine_b = { { "b:gitsigns_head", icon = "" } },
-				lualine_c = { component__lsp_names },
-				lualine_x = {},
+				lualine_c = {},
+				lualine_x = { component__lsp_names },
 				lualine_y = { { "diff", source = diff_source }, "diagnostics" },
-				lualine_z = { "location", "progress" },
+				lualine_z = { "progress" },
 			},
 			extensions = {
 				"lazy",
@@ -57,7 +62,7 @@ return {
 				},
 				lualine_z = {
 					{ "filetype", padding = { left = 1, right = 0 }, colored = false, icon_only = true },
-					{ "filename", padding = { left = 0, right = 1 }, symbols = { unnamed = ' [No Name]' } },
+					{ "filename", padding = { left = 0, right = 1 }, symbols = { unnamed = " [No Name]" } },
 				},
 			},
 			inactive_winbar = {
