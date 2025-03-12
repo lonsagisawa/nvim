@@ -34,6 +34,7 @@ return {
 					background = true,
 				},
 			},
+			render_markdown = true,
 			snacks = {
 				enabled = true,
 				indent_scope_color = "lavender",
