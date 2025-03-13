@@ -16,7 +16,7 @@ return {
 				return ""
 			end
 
-			return "󰒓 " .. table.concat(clients, ", ")
+			return "󰒓 " .. table.concat(clients, ",")
 		end
 
 		local function diff_source()
