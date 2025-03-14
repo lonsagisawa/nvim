@@ -16,7 +16,7 @@ return {
 				return ""
 			end
 
-			return "󰒓 " .. table.concat(clients, ",")
+			return table.concat(clients, ",")
 		end
 
 		local function diff_source()
@@ -45,16 +45,21 @@ return {
 			},
 			sections = {
 				lualine_a = { "mode" },
-				lualine_b = { { "b:gitsigns_head", icon = "" } },
-				lualine_c = {},
-				lualine_x = { component__lsp_names },
-				lualine_y = {
+				lualine_b = {
+					{ "b:gitsigns_head", icon = "" },
 					{
 						"diff",
 						source = diff_source,
-						symbols = { added = " ", modified = " " , removed = " " },
+						symbols = { added = " ", modified = " ", removed = " " },
 					},
 					"diagnostics",
+				},
+				lualine_c = {
+					{ "aerial", sep = "  " },
+				},
+				lualine_x = {},
+				lualine_y = {
+					{ component__lsp_names, icon = "󰒓" },
 				},
 				lualine_z = { "location" },
 			},
@@ -64,18 +69,12 @@ return {
 				"nvim-tree",
 			},
 			winbar = {
-				lualine_c = {
-					{ "aerial", sep = "  " },
-				},
 				lualine_z = {
-					{ "filetype", padding = { left = 1, right = 0 }, colored = false, icon_only = true },
+					{ "filetype", padding = { left = 1, right = 0 }, colored = false,                     icon_only = true },
 					{ "filename", padding = { left = 0, right = 1 }, symbols = { unnamed = " [No Name]" } },
 				},
 			},
 			inactive_winbar = {
-				lualine_c = {
-					{ "aerial", sep = "  " },
-				},
 				lualine_z = {
 					{ "filetype", padding = { left = 1, right = 0 }, colored = false, icon_only = true },
 					{ "filename", padding = { left = 0, right = 1 } },
