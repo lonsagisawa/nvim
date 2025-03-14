@@ -46,7 +46,7 @@ return {
 			sections = {
 				lualine_a = { "mode" },
 				lualine_b = {
-					{ "b:gitsigns_head", icon = "" },
+					{ "b:gitsigns_head", icon = "" },
 					{
 						"diff",
 						source = diff_source,
@@ -70,7 +70,7 @@ return {
 			},
 			winbar = {
 				lualine_z = {
-					{ "filetype", padding = { left = 1, right = 0 }, colored = false,                     icon_only = true },
+					{ "filetype", padding = { left = 1, right = 0 }, colored = false, icon_only = true },
 					{ "filename", padding = { left = 0, right = 1 }, symbols = { unnamed = " [No Name]" } },
 				},
 			},
