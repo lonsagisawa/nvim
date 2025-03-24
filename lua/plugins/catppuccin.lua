@@ -3,7 +3,7 @@ return {
 	name = "catppuccin",
 	priority = 1000,
 	opts = {
-		flavour = "macchiato",
+		flavour = "mocha",
 		integrations = {
 			aerial = true,
 			blink_cmp = true,
@@ -43,5 +43,12 @@ return {
 			treesitter = true,
 			which_key = true,
 		},
+		custom_highlights = function(colors)
+			return {
+				BlinkCmpMenuBorder = {
+					bg = colors.base,
+				},
+			}
+		end,
 	},
 }
