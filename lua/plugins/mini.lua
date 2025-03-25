@@ -66,7 +66,6 @@ return {
 					action = "open",
 					pair = "[]",
 					neigh_pattern = '.[%s%z%<>")}%]]',
-					register = { cr = false },
 					-- foo|bar -> press "[" -> foo[bar
 					-- foobar| -> press "[" -> foobar[]
 					-- |foobar -> press "[" -> [foobar
@@ -82,7 +81,6 @@ return {
 					pair = "{}",
 					-- neigh_pattern = ".[%s%z%)}]",
 					neigh_pattern = '.[%s%z%<>")}%]]',
-					register = { cr = false },
 					-- foo|bar -> press "{" -> foo{bar
 					-- foobar| -> press "{" -> foobar{}
 					-- |foobar -> press "{" -> {foobar
@@ -97,7 +95,6 @@ return {
 					pair = "()",
 					-- neigh_pattern = ".[%s%z]",
 					neigh_pattern = '.[%s%z%")]',
-					register = { cr = false },
 					-- foo|bar -> press "(" -> foo(bar
 					-- foobar| -> press "(" -> foobar()
 					-- |foobar -> press "(" -> (foobar
