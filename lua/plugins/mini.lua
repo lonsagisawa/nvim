@@ -13,12 +13,17 @@ return {
 
 		require("mini.cursorword").setup()
 		require("mini.trailspace").setup()
-		require("mini.splitjoin").setup()
 		require("mini.icons").setup()
 		require("mini.ai").setup()
 		require("mini.surround").setup()
 
 		MiniIcons.mock_nvim_web_devicons()
+
+		require("mini.splitjoin").setup({
+			mappings = {
+				toggle = "J",
+			},
+		})
 
 		require("mini.files").setup({
 			mappings = {
@@ -29,8 +34,8 @@ return {
 			},
 		})
 
-		local gen_loader = require('mini.snippets').gen_loader
-		require('mini.snippets').setup({
+		local gen_loader = require("mini.snippets").gen_loader
+		require("mini.snippets").setup({
 			snippets = {
 				-- Load custom file with global snippets first (adjust for Windows)
 				-- gen_loader.from_file('~/.config/nvim/snippets/global.json'),
@@ -60,7 +65,7 @@ return {
 				["["] = {
 					action = "open",
 					pair = "[]",
-					neigh_pattern = ".[%s%z%<>\")}%]]",
+					neigh_pattern = '.[%s%z%<>")}%]]',
 					register = { cr = false },
 					-- foo|bar -> press "[" -> foo[bar
 					-- foobar| -> press "[" -> foobar[]
@@ -76,7 +81,7 @@ return {
 					action = "open",
 					pair = "{}",
 					-- neigh_pattern = ".[%s%z%)}]",
-					neigh_pattern = ".[%s%z%<>\")}%]]",
+					neigh_pattern = '.[%s%z%<>")}%]]',
 					register = { cr = false },
 					-- foo|bar -> press "{" -> foo{bar
 					-- foobar| -> press "{" -> foobar{}
@@ -91,7 +96,7 @@ return {
 					action = "open",
 					pair = "()",
 					-- neigh_pattern = ".[%s%z]",
-					neigh_pattern = ".[%s%z%\")]",
+					neigh_pattern = '.[%s%z%")]',
 					register = { cr = false },
 					-- foo|bar -> press "(" -> foo(bar
 					-- foobar| -> press "(" -> foobar()
