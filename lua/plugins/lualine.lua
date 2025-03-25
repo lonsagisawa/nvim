@@ -2,6 +2,7 @@ return {
 	"nvim-lualine/lualine.nvim",
 	dependencies = {
 		"lewis6991/gitsigns.nvim",
+		"stevearc/aerial.nvim",
 	},
 	config = function()
 		-- https://qiita.com/uhooi/items/99aeff822d4870a8e269
