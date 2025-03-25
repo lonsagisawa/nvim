@@ -8,7 +8,7 @@ return {
 		end,
 
 		preview_opts = {
-			border = "single",
+			border = "rounded",
 		},
 
 		-- Whether the contents of a currently open hover window should be moved
