@@ -5,21 +5,6 @@ return {
 		"stevearc/aerial.nvim",
 	},
 	config = function()
-		-- https://qiita.com/uhooi/items/99aeff822d4870a8e269
-		local component__lsp_names = function()
-			local clients = vim.iter(vim.lsp.get_clients({ bufnr = 0 }))
-				:map(function(client)
-					return client.name
-				end)
-				:totable()
-
-			if next(clients) == nil then
-				return ""
-			end
-
-			return table.concat(clients, ",")
-		end
-
 		local function diff_source()
 			local gitsigns = vim.b.gitsigns_status_dict
 			if gitsigns then
@@ -34,7 +19,7 @@ return {
 		require("lualine").setup({
 			options = {
 				theme = "catppuccin",
-				section_separators = { left = "", right = "" },
+				section_separators = { left = "", right = "" },
 				component_separators = "",
 				globalstatus = true,
 				disabled_filetypes = {
@@ -45,24 +30,19 @@ return {
 				},
 			},
 			sections = {
-				lualine_a = { "mode" },
+				lualine_a = { { "mode", separator = { left = "", right = "" } } },
 				lualine_b = {
 					{ "b:gitsigns_head", icon = "" },
-					{
-						"diff",
-						source = diff_source,
-						symbols = { added = " ", modified = " ", removed = " " },
-					},
-					"diagnostics",
 				},
 				lualine_c = {
 					{ "aerial", sep = "  " },
 				},
-				lualine_x = {},
-				lualine_y = {
-					{ component__lsp_names, icon = "󰒓" },
+				lualine_x = {
+					{ "lsp_status", symbols = { spinner = { "" }, done = "", separator = "," } },
+					"location",
 				},
-				lualine_z = { "location" },
+				lualine_y = {},
+				lualine_z = {},
 			},
 			extensions = {
 				"lazy",
@@ -70,15 +50,53 @@ return {
 				"nvim-tree",
 			},
 			winbar = {
+				lualine_x = {
+					{
+						"diff",
+						source = diff_source,
+						symbols = { added = " ", modified = " ", removed = " " },
+					},
+					"diagnostics",
+				},
 				lualine_z = {
-					{ "filetype", padding = { left = 1, right = 0 }, colored = false, icon_only = true },
-					{ "filename", padding = { left = 0, right = 1 }, symbols = { unnamed = " [No Name]" } },
+					{
+						"filetype",
+						padding = { left = 1, right = 0 },
+						colored = false,
+						icon_only = true,
+						separator = { left = "" },
+					},
+					{
+						"filename",
+						padding = { left = 0, right = 1 },
+						symbols = { unnamed = " [No Name]" },
+						separator = { left = "", right = "" },
+					},
 				},
 			},
 			inactive_winbar = {
+				lualine_x = {
+					{
+						"diff",
+						source = diff_source,
+						symbols = { added = " ", modified = " ", removed = " " },
+					},
+					"diagnostics",
+				},
 				lualine_z = {
-					{ "filetype", padding = { left = 1, right = 0 }, colored = false, icon_only = true },
-					{ "filename", padding = { left = 0, right = 1 } },
+					{
+						"filetype",
+						padding = { left = 1, right = 0 },
+						colored = false,
+						icon_only = true,
+						separator = { left = "" },
+					},
+					{
+						"filename",
+						padding = { left = 0, right = 1 },
+						symbols = { unnamed = " [No Name]" },
+						separator = { left = "", right = "" },
+					},
 				},
 			},
 		})
