@@ -1,4 +1,4 @@
-local cmp_capabilities = require('cmp_nvim_lsp').default_capabilities()
+local blink_capabilities = require('blink.cmp').get_lsp_capabilities()
 
 require("mason").setup({})
 require("mason-lspconfig").setup({
@@ -25,14 +25,14 @@ require("mason-lspconfig").setup({
 require("mason-lspconfig").setup_handlers({
 	function(server_name)
 		require("lspconfig")[server_name].setup({
-			capabilities = cmp_capabilities,
+			capabilities = blink_capabilities,
 		})
 	end,
 
 	["html"] = function()
 		require("lspconfig").html.setup({
 			filetypes = { "html", "blade" },
-			capabilities = cmp_capabilities,
+			capabilities = blink_capabilities,
 		})
 	end,
 
@@ -42,7 +42,7 @@ require("mason-lspconfig").setup_handlers({
 			settings = {
 				vtsls = { tsserver = { globalPlugins = {} } },
 			},
-			capabilities = cmp_capabilities,
+			capabilities = blink_capabilities,
 			before_init = function(params, config)
 				local result = vim.system(
 					{ "npm", "query", "#vue" },
@@ -66,7 +66,7 @@ require("mason-lspconfig").setup_handlers({
 
 	["lua_ls"] = function()
 		require("lspconfig").lua_ls.setup({
-			capabilities = cmp_capabilities,
+			capabilities = blink_capabilities,
 			settings = {
 				Lua = {
 					diagnostics = {
