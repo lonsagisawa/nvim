@@ -5,6 +5,6 @@ return {
 	},
 	opts = {},
 	keys = {
-		{ "<leader>c", "<cmd>ClaudeCode<CR>", desc = "Claude Code" }
+		{ "<leader>cc", "<cmd>ClaudeCode<CR>", desc = "Claude Code" }
 	},
 }
