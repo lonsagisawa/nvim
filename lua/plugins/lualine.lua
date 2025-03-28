@@ -84,7 +84,7 @@ return {
 					{
 						"filename",
 						padding = { left = 0, right = 1 },
-						symbols = { unnamed = " [No Name]" },
+						symbols = { unnamed = " [No Name]", modified = "" },
 						separator = { left = "", right = "" },
 					},
 				},
@@ -109,7 +109,7 @@ return {
 					{
 						"filename",
 						padding = { left = 0, right = 1 },
-						symbols = { unnamed = " [No Name]" },
+						symbols = { unnamed = " [No Name]", modified = "" },
 						separator = { left = "", right = "" },
 					},
 				},
