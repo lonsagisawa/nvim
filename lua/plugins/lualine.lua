@@ -47,10 +47,9 @@ return {
 			},
 			sections = {
 				lualine_a = { { custom_mode, separator = { left = "", right = "" } } },
-				lualine_b = {
-					{ "b:gitsigns_head", icon = "" },
-				},
+				lualine_b = {},
 				lualine_c = {
+					{ "b:gitsigns_head", icon = "", padding = { left = 2, right = 1 } },
 					{ "aerial", sep = "  " },
 				},
 				lualine_x = {
