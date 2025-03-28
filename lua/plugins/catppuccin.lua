@@ -48,6 +48,7 @@ return {
 			return {
 				BlinkCmpMenuBorder = {
 					bg = colors.base,
+					fg = colors.mauve,
 				},
 			}
 		end,
