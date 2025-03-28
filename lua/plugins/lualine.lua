@@ -18,8 +18,8 @@ return {
 
 		require("lualine").setup({
 			options = {
-				theme = "catppuccin",
-				section_separators = { left = "", right = "" },
+				theme = "catppuccin-mocha-custom",
+				section_separators = "",
 				component_separators = "",
 				globalstatus = true,
 				disabled_filetypes = {
@@ -32,11 +32,17 @@ return {
 			sections = {
 				lualine_a = {
 					{
+						function()
+							return "█"
+						end,
+						padding = { left = 0, right = 1 },
+					},
+					{
 						"mode",
 						fmt = function(str)
 							return string.sub(str, 1, 3)
 						end,
-						separator = { left = "", right = "" },
+						padding = 0,
 					},
 				},
 				lualine_b = {},
@@ -49,7 +55,14 @@ return {
 					{ "location", icon = "" },
 				},
 				lualine_y = {},
-				lualine_z = {},
+				lualine_z = {
+					{
+						function()
+							return "█"
+						end,
+						padding = 0,
+					},
+				},
 			},
 			extensions = {
 				"lazy",
@@ -71,13 +84,17 @@ return {
 						padding = { left = 1, right = 0 },
 						colored = false,
 						icon_only = true,
-						separator = { left = "" },
 					},
 					{
 						"filename",
 						padding = { left = 0, right = 1 },
 						symbols = { unnamed = " [No Name]", modified = "" },
-						separator = { left = "", right = "" },
+					},
+					{
+						function()
+							return "█"
+						end,
+						padding = 0,
 					},
 				},
 			},
@@ -96,13 +113,17 @@ return {
 						padding = { left = 1, right = 0 },
 						colored = false,
 						icon_only = true,
-						separator = { left = "" },
 					},
 					{
 						"filename",
 						padding = { left = 0, right = 1 },
 						symbols = { unnamed = " [No Name]", modified = "" },
-						separator = { left = "", right = "" },
+					},
+					{
+						function()
+							return "█"
+						end,
+						padding = 0,
 					},
 				},
 			},
