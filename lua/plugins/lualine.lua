@@ -16,22 +16,6 @@ return {
 			end
 		end
 
-		local function custom_mode()
-			local mode_map = {
-				n = "NOR", -- ノーマルモード
-				i = "INS", -- インサートモード
-				v = "VIS", -- ビジュアルモード
-				V = "V-L", -- ビジュアルラインモード
-				[""] = "V-B", -- ビジュアルブロックモード
-				c = "COM", -- コマンドモード
-				R = "REP", -- 置換モード
-				t = "TER", -- ターミナルモード
-			}
-
-			local current_mode = vim.fn.mode()
-			return mode_map[current_mode] or current_mode
-		end
-
 		require("lualine").setup({
 			options = {
 				theme = "catppuccin",
@@ -46,7 +30,15 @@ return {
 				},
 			},
 			sections = {
-				lualine_a = { { custom_mode, separator = { left = "", right = "" } } },
+				lualine_a = {
+					{
+						"mode",
+						fmt = function(str)
+							return string.sub(str, 1, 3)
+						end,
+						separator = { left = "", right = "" },
+					},
+				},
 				lualine_b = {},
 				lualine_c = {
 					{ "b:gitsigns_head", icon = "", padding = { left = 2, right = 1 } },
