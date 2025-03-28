@@ -54,7 +54,7 @@ return {
 				},
 				lualine_x = {
 					{ "lsp_status", symbols = { spinner = { "" }, done = "", separator = "," } },
-					"location",
+					{ "location", icon = "" },
 				},
 				lualine_y = {},
 				lualine_z = {},
