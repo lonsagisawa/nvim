@@ -1,4 +1,5 @@
 {
+  "Comment.nvim": { "branch": "master", "commit": "e30b7f2008e52442154b66f7c519bfd2f1e32acb" },
   "aerial.nvim": { "branch": "master", "commit": "9ebc13583cff447f5493a63e99dfca526b3c3088" },
   "avante.nvim": { "branch": "main", "commit": "a06bb97db6e522f51de1427b72762a1ad0794279" },
   "blade-nav.nvim": { "branch": "main", "commit": "56601aaf230698388ed687d1d9d468599d277ac2" },
@@ -39,7 +40,6 @@
   "tiny-inline-diagnostic.nvim": { "branch": "main", "commit": "5d168a2826fb90691f674e81bd5c1dfa6d931c61" },
   "todo-comments.nvim": { "branch": "main", "commit": "304a8d204ee787d2544d8bc23cd38d2f929e7cc5" },
   "trouble.nvim": { "branch": "main", "commit": "85bedb7eb7fa331a2ccbecb9202d8abba64d37b3" },
-  "ts-comments.nvim": { "branch": "main", "commit": "1bd9d0ba1d8b336c3db50692ffd0955fe1bb9f0c" },
   "vim-sleuth": { "branch": "master", "commit": "be69bff86754b1aa5adcbb527d7fcd1635a84080" },
   "which-key.nvim": { "branch": "main", "commit": "370ec46f710e058c9c1646273e6b225acf47cbed" }
 }
