@@ -46,6 +46,14 @@ return {
 		},
 		custom_highlights = function(colors)
 			return {
+				BlinkCmpMenu = {
+					bg = colors.base,
+					fg = colors.text,
+				},
+				BlinkCmpSource = {
+					bg = colors.base,
+					fg = colors.blue,
+				},
 				BlinkCmpMenuBorder = {
 					bg = colors.base,
 					fg = colors.mauve,
