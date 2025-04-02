@@ -45,17 +45,25 @@ return {
 						padding = 0,
 					},
 				},
-				lualine_b = {},
-				lualine_c = {
+				lualine_b = {
 					{ "b:gitsigns_head", icon = "", padding = { left = 2, right = 1 } },
+				},
+				lualine_c = {
 					{ "aerial", sep = "  " },
 				},
 				lualine_x = {
 					{ "lsp_status", symbols = { spinner = { "" }, done = "", separator = "," } },
-					{ "location", icon = "" },
 				},
-				lualine_y = {},
+				lualine_y = {
+					{
+						"diff",
+						source = diff_source,
+						symbols = { added = " ", modified = " ", removed = " " },
+					},
+					"diagnostics",
+				},
 				lualine_z = {
+					{ "location", icon = "" },
 					{
 						function()
 							return "█"
@@ -70,14 +78,6 @@ return {
 				"nvim-tree",
 			},
 			winbar = {
-				lualine_x = {
-					{
-						"diff",
-						source = diff_source,
-						symbols = { added = " ", modified = " ", removed = " " },
-					},
-					"diagnostics",
-				},
 				lualine_z = {
 					{
 						"filetype",
@@ -99,14 +99,6 @@ return {
 				},
 			},
 			inactive_winbar = {
-				lualine_x = {
-					{
-						"diff",
-						source = diff_source,
-						symbols = { added = " ", modified = " ", removed = " " },
-					},
-					"diagnostics",
-				},
 				lualine_z = {
 					{
 						"filetype",
