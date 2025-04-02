@@ -78,18 +78,8 @@ require("mason-lspconfig").setup_handlers({
 	end,
 })
 
--- laravel-ls
--- masonではまだインストールできないので、別途インストールする
--- mise use --global go:github.com/laravel-ls/laravel-ls/cmd/laravel-ls@latest
-vim.api.nvim_create_autocmd("FileType", {
-	pattern = { "php", "blade" },
-	callback = function()
-		vim.lsp.start({
-			name = "laravel-ls",
-			cmd = { "laravel-ls" },
-			root_dir = vim.fn.getcwd(),
-		})
-	end,
+vim.lsp.enable({
+	"laravel-ls",
 })
 
 -- 読み込み中にくるくる回るアレ
