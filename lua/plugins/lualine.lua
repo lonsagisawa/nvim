@@ -16,6 +16,14 @@ return {
 			end
 		end
 
+		local function component__avante_provider()
+			local avante_config = require("avante.config")
+			local provider_details = avante_config.get_provider_config(avante_config.provider)
+
+			-- return avante_config.provider .. " - " .. provider_details.model
+			return provider_details.model
+		end
+
 		require("lualine").setup({
 			options = {
 				theme = "catppuccin-mocha-custom",
@@ -53,6 +61,8 @@ return {
 				},
 				lualine_x = {
 					{ "lsp_status", symbols = { spinner = { "" }, done = "", separator = "," } },
+					{ component__avante_provider, icon = "󱚣" },
+					{ require("mcphub.extensions.lualine") },
 				},
 				lualine_y = {
 					{
