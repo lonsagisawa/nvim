@@ -10,6 +10,18 @@ return {
 		behaviour = {
 			enable_cursor_planning_mode = true,
 		},
+
+		system_prompt = function()
+			local hub = require("mcphub").get_hub_instance()
+			return hub:get_active_servers_prompt()
+		end,
+
+		custom_tools = function()
+			return {
+				require("mcphub.extensions.avante").mcp_tool(),
+			}
+		end,
+
 		gemini = {
 			model = "gemini-2.0-flash",
 			max_tokens = 8192,
