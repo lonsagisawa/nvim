@@ -4,8 +4,12 @@ return {
 	lazy = false,
 	version = false,
 	opts = {
-		-- Providers: gemini, gemini_lite, groq, pplx, ollama
+		-- Providers: gemini, groq_llama3.3, pplx, ollama
 		provider = "gemini",
+		cursor_applying_provider = "groq_llama3.3",
+		behaviour = {
+			enable_cursor_planning_mode = true,
+		},
 		gemini = {
 			model = "gemini-2.0-flash",
 			max_tokens = 8192,
@@ -16,23 +20,18 @@ return {
 				model = "gemini-2.0-flash-lite",
 				max_tokens = 8192,
 			},
-			ollama = {
-				__inherited_from = "openai",
-				api_key_name = "",
-				endpoint = "http://127.0.0.1:11434/v1",
-				model = "qwen2.5-coder:7b",
-			},
-			groq_r1 = {
-				__inherited_from = "openai",
-				api_key_name = "GROQ_API_KEY",
-				endpoint = "https://api.groq.com/openai/v1",
-				model = "deepseek-r1-distill-llama-70b",
-			},
 			["groq_llama3.3"] = {
 				__inherited_from = "openai",
 				api_key_name = "GROQ_API_KEY",
 				endpoint = "https://api.groq.com/openai/v1",
 				model = "llama-3.3-70b-versatile",
+				max_tokens = 32768,
+			},
+			["groq_qwq"] = {
+				__inherited_from = "openai",
+				api_key_name = "GROQ_API_KEY",
+				endpoint = "https://api.groq.com/openai/v1",
+				model = "qwen-qwq-32b",
 			},
 			pplx = {
 				__inherited_from = "openai",
