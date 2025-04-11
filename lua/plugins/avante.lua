@@ -26,11 +26,17 @@ return {
 			model = "gemini-2.0-flash",
 			max_tokens = 8192,
 		},
+
 		vendors = {
 			gemini_lite = {
 				__inherited_from = "gemini",
 				model = "gemini-2.0-flash-lite",
 				max_tokens = 8192,
+			},
+			gemini_pro = {
+				__inherited_from = "gemini",
+				model = "gemini-2.5-pro-preview-03-25",
+				max_tokens = 65536,
 			},
 			["groq_llama3.3"] = {
 				__inherited_from = "openai",
@@ -44,6 +50,7 @@ return {
 				api_key_name = "GROQ_API_KEY",
 				endpoint = "https://api.groq.com/openai/v1",
 				model = "qwen-qwq-32b",
+				max_tokens = 32768,
 			},
 			pplx = {
 				__inherited_from = "openai",
