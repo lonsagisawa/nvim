@@ -32,8 +32,8 @@ return {
 				globalstatus = true,
 				disabled_filetypes = {
 					winbar = {
-						"NvimTree",
 						"no-neck-pain",
+						"snacks_dashboard",
 						"Avante",
 						"AvanteSelectedFiles",
 						"AvanteInput",
