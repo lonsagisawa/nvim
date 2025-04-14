@@ -1,8 +1,14 @@
 return {
 	"yetone/avante.nvim",
 	event = "VeryLazy",
-	lazy = false,
 	version = false,
+	build = function()
+		if vim.loop.os_uname().sysname == "Windows_NT" then
+			return "powershell -ExecutionPolicy Bypass -File Build.ps1 -BuildFromSource false"
+		else
+			return "make"
+		end
+	end,
 	opts = {
 		-- Providers: gemini, groq_llama3.3, pplx, ollama
 		provider = "gemini",
@@ -65,9 +71,6 @@ return {
 			provider = "snacks",
 		},
 	},
-	-- if you want to build from source then do `make BUILD_FROM_SOURCE=true`
-	build = "make",
-	-- build = "powershell -ExecutionPolicy Bypass -File Build.ps1 -BuildFromSource false" -- for windows
 	dependencies = {
 		"stevearc/dressing.nvim",
 		"nvim-lua/plenary.nvim",
