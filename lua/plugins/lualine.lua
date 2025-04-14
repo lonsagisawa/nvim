@@ -1,5 +1,6 @@
 return {
 	"nvim-lualine/lualine.nvim",
+	event = "VeryLazy",
 	dependencies = {
 		"lewis6991/gitsigns.nvim",
 		"stevearc/aerial.nvim",
@@ -31,6 +32,9 @@ return {
 				component_separators = "",
 				globalstatus = true,
 				disabled_filetypes = {
+					statusline = {
+						"snacks_dashboard",
+					},
 					winbar = {
 						"no-neck-pain",
 						"snacks_dashboard",
