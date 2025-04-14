@@ -54,6 +54,18 @@ return {
 			style = "minimal",
 			top_down = false,
 		},
+		zen = {
+			enabled = true,
+			toggles = {
+				dim = false,
+				git_signs = true,
+				mini_diff_signs = true,
+			},
+			show = {
+				statusline = true,
+				tabline = true,
+			}
+		},
 	},
 	keys = {
 		-- Lazygit
@@ -71,7 +83,7 @@ return {
 		{ "<leader>n",       function() Snacks.picker.notifications() end,         desc = "Notification History" },
 		{ "<leader>sb",      function() Snacks.picker.lines() end,                 desc = "Buffer Lines" },
 		{ "<leader>sB",      function() Snacks.picker.grep_buffers() end,          desc = "Grep Open Buffers" },
-		{ "<leader>sg",      function() Snacks.picker.grep() end,                  desc = "Grep" },
+		-- { "<leader>sg",      function() Snacks.picker.grep() end,                  desc = "Grep" },
 		{ "<leader>sw",      function() Snacks.picker.grep_word() end,             desc = "Visual selection or word", mode = { "n", "x" } },
 		-- search
 		{ '<leader>s"',      function() Snacks.picker.registers() end,             desc = "Registers" },
@@ -103,5 +115,7 @@ return {
 		{ "gy",              function() Snacks.picker.lsp_type_definitions() end,  desc = "Goto T[y]pe Definition" },
 		{ "<leader>ss",      function() Snacks.picker.lsp_symbols() end,           desc = "LSP Symbols" },
 		{ "<leader>sS",      function() Snacks.picker.lsp_workspace_symbols() end, desc = "LSP Workspace Symbols" },
+
+		{"<leader>z", function() Snacks.zen() end,},
 	}
 }
