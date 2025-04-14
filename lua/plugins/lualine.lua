@@ -34,6 +34,9 @@ return {
 					winbar = {
 						"NvimTree",
 						"no-neck-pain",
+						"Avante",
+						"AvanteSelectedFiles",
+						"AvanteInput",
 					},
 				},
 			},
