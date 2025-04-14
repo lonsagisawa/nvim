@@ -45,9 +45,9 @@ require("mason-lspconfig").setup_handlers({
 			capabilities = blink_capabilities,
 			before_init = function(params, config)
 				local result = vim.system(
-					{ "npm", "query", "#vue" },
-					{ cwd = params.workspaceFolders[1].name, text = true }
-				)
+						{ "npm", "query", "#vue" },
+						{ cwd = params.workspaceFolders[1].name, text = true }
+					)
 					:wait()
 				if result.stdout ~= "[]" then
 					local vuePluginConfig = {
@@ -65,16 +65,7 @@ require("mason-lspconfig").setup_handlers({
 	end,
 
 	["lua_ls"] = function()
-		require("lspconfig").lua_ls.setup({
-			capabilities = blink_capabilities,
-			settings = {
-				Lua = {
-					diagnostics = {
-						globals = { "vim" },
-					},
-				},
-			},
-		})
+		vim.lsp.enable("lua_ls")
 	end,
 })
 
@@ -90,7 +81,8 @@ vim.api.nvim_create_autocmd("LspProgress", {
 	---@param ev {data: {client_id: integer, params: lsp.ProgressParams}}
 	callback = function(ev)
 		local client = vim.lsp.get_client_by_id(ev.data.client_id)
-		local value = ev.data.params.value --[[@as {percentage?: number, title?: string, message?: string, kind: "begin" | "report" | "end"}]]
+		local value = ev.data.params
+		.value --[[@as {percentage?: number, title?: string, message?: string, kind: "begin" | "report" | "end"}]]
 		if not client or type(value) ~= "table" then
 			return
 		end
