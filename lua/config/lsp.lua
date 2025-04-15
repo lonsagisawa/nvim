@@ -22,7 +22,6 @@ local servers = {
 	"lua_ls",
 	"marksman",
 	"svelte",
-	"unocss",
 	"vtsls",
 }
 
@@ -30,6 +29,7 @@ local servers = {
 local legacy_servers = {
 	"astro",
 	"tailwindcss",
+	"unocss",
 	"volar",
 }
 
