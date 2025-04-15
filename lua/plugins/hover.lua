@@ -16,4 +16,10 @@ return {
 		preview_window = false,
 		title = true,
 	},
+	keys = {
+		{ "K", function() require("hover").hover({}) end, desc = "hover.nvim" },
+		{ "gK", function() require("hover").hover_select({}) end, desc = "hover.nvim (select)" },
+		{ "<C-p>", function() require("hover").hover_switch("previous") end, desc = "hover.nvim (previous source)" },
+		{ "<C-n>", function() require("hover").hover_switch("next") end, desc = "hover.nvim (next source)" },
+	}
 }
