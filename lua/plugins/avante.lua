@@ -2,13 +2,9 @@ return {
 	"yetone/avante.nvim",
 	event = "VeryLazy",
 	version = false,
-	build = function()
-		if vim.loop.os_uname().sysname == "Windows_NT" then
-			return "powershell -ExecutionPolicy Bypass -File Build.ps1 -BuildFromSource false"
-		else
-			return "make"
-		end
-	end,
+	build = "make",
+	-- Windows
+	-- build = "powershell -ExecutionPolicy Bypass -File Build.ps1 -BuildFromSource false",
 	opts = {
 		-- Providers: gemini, groq_llama3.3, pplx, ollama
 		provider = "gemini",
@@ -91,14 +87,6 @@ return {
 					use_absolute_path = true,
 				},
 			},
-		},
-		{
-			-- Make sure to set this up properly if you have lazy=true
-			"MeanderingProgrammer/render-markdown.nvim",
-			opts = {
-				file_types = { "markdown", "Avante" },
-			},
-			ft = { "markdown", "Avante" },
 		},
 	},
 }
