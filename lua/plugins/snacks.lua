@@ -94,6 +94,7 @@ return {
 					{ icon = "", key = "e", desc = "File Explorer", action = function() require("mini.files").open() end, },
 					{ icon = "", key = "lg", desc = "LazyGit", action = function() Snacks.lazygit.open() end, },
 					{ icon = "󰐱", key = "ll", desc = "Lazy", action = ":Lazy" },
+					{ icon = "", key = "t", desc = "Terminal", action = function() Snacks.terminal.toggle() end, },
 					{ icon = "󰩈", key = "q", desc = "Quit", action = ":qa" },
 				}
 			},
