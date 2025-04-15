@@ -12,7 +12,7 @@ return {
 
 		appearance = { nerd_font_variant = "normal" },
 
-		snippets = { preset = "mini_snippets" },
+		snippets = { preset = "default" },
 
 		completion = {
 			menu = {
