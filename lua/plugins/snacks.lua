@@ -92,7 +92,8 @@ return {
 					{ icon = "", key = "<Space>", desc = "Smart Finder", action = function() Snacks.dashboard.pick('smart') end, },
 					{ icon = "", key = "g", desc = "Grep", action = function() require("grug-far").open() end, },
 					{ icon = "", key = "e", desc = "File Explorer", action = function() require("mini.files").open() end, },
-					{ icon = "󰐱", key = "l", desc = "Lazy", action = ":Lazy" },
+					{ icon = "", key = "lg", desc = "LazyGit", action = function() Snacks.lazygit.open() end, },
+					{ icon = "󰐱", key = "ll", desc = "Lazy", action = ":Lazy" },
 					{ icon = "󰩈", key = "q", desc = "Quit", action = ":qa" },
 				}
 			},
