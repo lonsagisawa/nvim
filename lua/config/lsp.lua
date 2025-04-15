@@ -57,7 +57,6 @@ vim.lsp.config("vtsls", {
 	settings = {
 		vtsls = { tsserver = { globalPlugins = {} } },
 	},
-	capabilities = blink_capabilities,
 	before_init = function(params, config)
 		local result = vim.system({ "npm", "query", "#vue" }, { cwd = params.workspaceFolders[1].name, text = true })
 			:wait()
