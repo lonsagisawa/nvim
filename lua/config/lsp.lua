@@ -12,6 +12,7 @@ function mergeTables(t1, t2)
 end
 
 local servers = {
+	"astro",
 	"cssls",
 	"css_variables",
 	"cssmodules_ls",
@@ -27,7 +28,6 @@ local servers = {
 
 -- https://github.com/neovim/nvim-lspconfig/issues/3705
 local legacy_servers = {
-	"astro",
 	"tailwindcss",
 	"unocss",
 	"volar",
