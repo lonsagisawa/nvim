@@ -1,5 +1,3 @@
-local blink_capabilities = require("blink.cmp").get_lsp_capabilities()
-
 function mergeTables(t1, t2)
 	local result = {}
 	for i = 1, #t1 do
@@ -108,9 +106,7 @@ vim.lsp.config("astro", {
 vim.lsp.enable(servers)
 
 for _, server_name in ipairs(legacy_servers) do
-	require("lspconfig")[server_name].setup({
-		capabilities = blink_capabilities,
-	})
+	require("lspconfig")[server_name].setup({})
 end
 
 vim.lsp.enable({

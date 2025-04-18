@@ -3,7 +3,7 @@ return {
 	dependencies = { "echasnovski/mini.nvim" },
 	version = "1.*",
 
-	event = "BufWritePre",
+	event = "VeryLazy",
 
 	---@module 'blink.cmp'
 	---@type blink.cmp.Config
