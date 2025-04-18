@@ -30,6 +30,11 @@ return {
 		},
 
 		vendors = {
+			["gemini-2.5-flash-preview"] = {
+				__inherited_from = "gemini",
+				model = "gemini-2.5-flash-preview-04-17",
+				max_tokens = 65536,
+			},
 			gemini_lite = {
 				__inherited_from = "gemini",
 				model = "gemini-2.0-flash-lite",
