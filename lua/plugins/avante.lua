@@ -7,8 +7,8 @@ return {
 	-- build = "powershell -ExecutionPolicy Bypass -File Build.ps1 -BuildFromSource false",
 	opts = {
 		-- Providers: gemini, groq_llama3.3, pplx, ollama
-		provider = "gemini",
-		cursor_applying_provider = "groq_llama3.3",
+		provider = "openai",
+		cursor_applying_provider = "gpt-4.1-nano",
 		behaviour = {
 			enable_cursor_planning_mode = true,
 		},
@@ -24,35 +24,45 @@ return {
 			}
 		end,
 
+		openai = {
+			model = "gpt-4.1",
+			max_tokens = 32768,
+		},
+
 		gemini = {
 			model = "gemini-2.0-flash",
 			max_tokens = 8192,
 		},
 
 		vendors = {
-			["gemini-2.5-flash-preview"] = {
+			["gpt-4.1-mini"] = {
+				__inherited_from = "openai",
+				model = "gpt-4.1-mini",
+				max_tokens = 32768,
+			},
+			["gpt-4.1-nano"] = {
+				__inherited_from = "openai",
+				model = "gpt-4.1-nano",
+				max_tokens = 32768,
+			},
+			["gemini-2.5-flash"] = {
 				__inherited_from = "gemini",
 				model = "gemini-2.5-flash-preview-04-17",
 				max_tokens = 65536,
 			},
-			gemini_lite = {
-				__inherited_from = "gemini",
-				model = "gemini-2.0-flash-lite",
-				max_tokens = 8192,
-			},
-			gemini_pro = {
+			["gemini-2.5-pro"] = {
 				__inherited_from = "gemini",
 				model = "gemini-2.5-pro-preview-03-25",
 				max_tokens = 65536,
 			},
-			["groq_llama3.3"] = {
+			["groq-llama3.3"] = {
 				__inherited_from = "openai",
 				api_key_name = "GROQ_API_KEY",
 				endpoint = "https://api.groq.com/openai/v1",
 				model = "llama-3.3-70b-versatile",
 				max_tokens = 32768,
 			},
-			["groq_qwq"] = {
+			["groq-qwq"] = {
 				__inherited_from = "openai",
 				api_key_name = "GROQ_API_KEY",
 				endpoint = "https://api.groq.com/openai/v1",
