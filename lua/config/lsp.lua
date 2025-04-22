@@ -21,13 +21,13 @@ local servers = {
 	"lua_ls",
 	"marksman",
 	"svelte",
+	"tailwindcss",
 	"vtsls",
 	"volar",
 }
 
 -- https://github.com/neovim/nvim-lspconfig/issues/3705
 local legacy_servers = {
-	"tailwindcss",
 	"unocss",
 }
 
