@@ -1,14 +1,3 @@
-function mergeTables(t1, t2)
-	local result = {}
-	for i = 1, #t1 do
-		result[#result + 1] = t1[i]
-	end
-	for i = 1, #t2 do
-		result[#result + 1] = t2[i]
-	end
-	return result
-end
-
 local servers = {
 	"astro",
 	"cssls",
@@ -26,21 +15,12 @@ local servers = {
 	"volar",
 }
 
--- https://github.com/neovim/nvim-lspconfig/issues/3705
-local legacy_servers = {
-	"unocss",
-}
-
 require("mason").setup()
 require("mason-lspconfig").setup({
-	ensure_installed = mergeTables(servers, legacy_servers),
+	ensure_installed = servers,
 })
 
 vim.lsp.enable(servers)
-
-for _, server_name in ipairs(legacy_servers) do
-	require("lspconfig")[server_name].setup({})
-end
 
 vim.lsp.enable({
 	"laravel-ls",
