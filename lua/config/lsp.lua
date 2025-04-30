@@ -15,16 +15,17 @@ local servers = {
 	"volar",
 }
 
+local non_mason_servers = {
+	"laravel_ls",
+}
+
 require("mason").setup()
 require("mason-lspconfig").setup({
 	ensure_installed = servers,
 })
 
 vim.lsp.enable(servers)
-
-vim.lsp.enable({
-	"laravel-ls",
-})
+vim.lsp.enable(non_mason_servers)
 
 -- 読み込み中にくるくる回るアレ
 -- https://github.com/folke/snacks.nvim/blob/main/docs/notifier.md#-examples
