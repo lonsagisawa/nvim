@@ -64,7 +64,7 @@ return {
 					{ "b:gitsigns_head", icon = "", padding = { left = 2, right = 1 } },
 				},
 				lualine_c = {
-					{ "aerial", sep = "  " },
+					{ "aerial", sep = " › " },
 				},
 				lualine_x = {
 					{ "lsp_status", symbols = { spinner = { "" }, done = "", separator = "," } },
