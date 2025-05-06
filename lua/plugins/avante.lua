@@ -27,11 +27,35 @@ return {
 		openai = {
 			model = "gpt-4.1",
 			max_tokens = 32768,
+			disabled_tools = {
+				"list_files",
+				"search_files",
+				"read_file",
+				"create_file",
+				"rename_file",
+				"delete_file",
+				"create_dir",
+				"rename_dir",
+				"delete_dir",
+				"bash",
+			},
 		},
 
 		gemini = {
 			model = "gemini-2.0-flash",
 			max_tokens = 8192,
+			disabled_tools = {
+				"list_files",
+				"search_files",
+				"read_file",
+				"create_file",
+				"rename_file",
+				"delete_file",
+				"create_dir",
+				"rename_dir",
+				"delete_dir",
+				"bash",
+			},
 		},
 
 		vendors = {
