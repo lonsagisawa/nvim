@@ -1,4 +1,4 @@
-local servers = {
+local mason_servers = {
 	"astro",
 	"cssls",
 	"css_variables",
@@ -21,10 +21,10 @@ local non_mason_servers = {
 
 require("mason").setup()
 require("mason-lspconfig").setup({
-	ensure_installed = servers,
+	ensure_installed = mason_servers,
+	automatic_enable = true,
 })
 
-vim.lsp.enable(servers)
 vim.lsp.enable(non_mason_servers)
 
 -- 読み込み中にくるくる回るアレ
