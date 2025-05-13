@@ -33,6 +33,25 @@ vim.o.mouse = "a"
 -- clipboard
 vim.o.clipboard = "unnamedplus"
 
+local function paste()
+	return {
+		vim.fn.split(vim.fn.getreg(""), "\n"),
+		vim.fn.getregtype(""),
+	}
+end
+
+vim.g.clipboard = {
+	name = "OSC 52",
+	copy = {
+		["+"] = require("vim.ui.clipboard.osc52").copy("+"),
+		["*"] = require("vim.ui.clipboard.osc52").copy("*"),
+	},
+	paste = {
+		["+"] = paste,
+		["*"] = paste,
+	},
+}
+
 -- break indent
 vim.o.breakindent = true
 
@@ -85,17 +104,17 @@ vim.o.winblend = 0
 
 -- extui
 -- https://zenn.dev/kawarimidoll/articles/4da7458c102c1f
-local ok, extui = pcall(require, 'vim._extui')
+local ok, extui = pcall(require, "vim._extui")
 if ok then
-  extui.enable({
-    enable = true, -- extuiを有効化
-    msg = {
-      pos = 'cmd', -- 'box'か'cmd'だがcmdheight=0だとどっちでも良い？（記事後述）
-      box = {
-        timeout = 5000, -- boxメッセージの表示時間 ミリ秒
-      },
-    },
-  })
+	extui.enable({
+		enable = true, -- extuiを有効化
+		msg = {
+			pos = "cmd", -- 'box'か'cmd'だがcmdheight=0だとどっちでも良い？（記事後述）
+			box = {
+				timeout = 5000, -- boxメッセージの表示時間 ミリ秒
+			},
+		},
+	})
 end
 
 require("config.keymap")
