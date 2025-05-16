@@ -47,6 +47,9 @@ return {
 				},
 			},
 		},
+		input = {
+			enabled = true,
+		},
 		terminal = {
 			enabled = true,
 		},
