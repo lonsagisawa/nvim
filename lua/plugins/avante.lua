@@ -96,7 +96,7 @@ return {
 		},
 	},
 	dependencies = {
-		"stevearc/dressing.nvim",
+		-- "stevearc/dressing.nvim",
 		"MunifTanjim/nui.nvim",
 		{
 			-- support for image pasting
