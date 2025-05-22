@@ -12,7 +12,7 @@ local mason_servers = {
 	"svelte",
 	"tailwindcss",
 	"vtsls",
-	"volar",
+	"vue_ls",
 }
 
 local non_mason_servers = {
