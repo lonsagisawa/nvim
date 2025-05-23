@@ -16,7 +16,6 @@ return {
 
 		completion = {
 			menu = {
-				border = "rounded",
 				draw = {
 					components = {
 						kind_icon = {
@@ -54,17 +53,11 @@ return {
 
 			documentation = {
 				auto_show = true,
-				window = {
-					border = "rounded",
-				},
 			},
 		},
 
 		signature = {
 			enabled = true,
-			window = {
-				border = "rounded",
-			},
 		},
 
 		sources = {

@@ -83,4 +83,6 @@ vim.o.cmdheight = 0
 
 vim.o.winblend = 0
 
+vim.o.winborder = "rounded"
+
 require("config.keymap")
