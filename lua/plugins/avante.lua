@@ -6,8 +6,8 @@ return {
 	-- Windows
 	-- build = "powershell -ExecutionPolicy Bypass -File Build.ps1 -BuildFromSource false",
 	opts = {
-		-- Providers: gemini, groq_llama3.3, pplx, ollama
-		provider = "openai",
+		-- Providers: gemini, gemini-2.5-pro, openai(gpt-4.1-nano)
+		provider = "gemini",
 		cursor_applying_provider = "gpt-4.1-nano",
 		behaviour = {
 			enable_cursor_planning_mode = true,
@@ -43,52 +43,29 @@ return {
 		},
 
 		gemini = {
-			model = "gemini-2.0-flash",
-			max_tokens = 8192,
+			model = "gemini-2.5-flash-preview-05-20",
+			max_tokens = 65536,
 		},
 
 		vendors = {
-			["gpt-4.1-mini"] = {
-				__inherited_from = "openai",
-				model = "gpt-4.1-mini",
-				max_tokens = 32768,
+			["gemini-2.5-pro"] = {
+				__inherited_from = "gemini",
+				model = "gemini-2.5-pro-preview-05-06",
+				max_tokens = 65536,
 			},
+
 			["gpt-4.1-nano"] = {
 				__inherited_from = "openai",
 				model = "gpt-4.1-nano",
 				max_tokens = 32768,
 			},
-			["gemini-2.5-flash"] = {
-				__inherited_from = "gemini",
-				model = "gemini-2.5-flash-preview-04-17",
-				max_tokens = 65536,
-			},
-			["gemini-2.5-pro"] = {
-				__inherited_from = "gemini",
-				model = "gemini-2.5-pro-preview-03-25",
-				max_tokens = 65536,
-			},
-			["groq-llama3.3"] = {
-				__inherited_from = "openai",
-				api_key_name = "GROQ_API_KEY",
-				endpoint = "https://api.groq.com/openai/v1",
-				model = "llama-3.3-70b-versatile",
-				max_tokens = 32768,
-			},
-			["groq-qwq"] = {
-				__inherited_from = "openai",
-				api_key_name = "GROQ_API_KEY",
-				endpoint = "https://api.groq.com/openai/v1",
-				model = "qwen-qwq-32b",
-				max_tokens = 32768,
-			},
-			pplx = {
-				__inherited_from = "openai",
-				api_key_name = "PPLX_API_KEY",
-				endpoint = "https://api.perplexity.ai",
-				-- R1 1776 model
-				-- https://docs.perplexity.ai/guides/model-cards
-				model = "r1-1776",
+
+			groq = {
+				__inherited_from = 'openai',
+				api_key_name = 'GROQ_API_KEY',
+				endpoint = 'https://api.groq.com/openai/v1/',
+				model = 'llama-3.3-70b-versatile',
+				max_completion_tokens = 32768,
 			},
 		},
 		file_selector = {
@@ -96,7 +73,7 @@ return {
 		},
 	},
 	dependencies = {
-		-- "stevearc/dressing.nvim",
+		"stevearc/dressing.nvim",
 		"MunifTanjim/nui.nvim",
 		{
 			-- support for image pasting
