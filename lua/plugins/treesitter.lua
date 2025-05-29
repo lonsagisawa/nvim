@@ -19,7 +19,7 @@ return {
 							vim.treesitter.start()
 						end)
 					end
-				end
+				end,
 			})
 		end,
 	},
