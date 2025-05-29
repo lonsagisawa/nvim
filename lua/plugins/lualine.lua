@@ -65,6 +65,10 @@ return {
 				},
 				lualine_c = {
 					{ "aerial", sep = " › " },
+					{
+						require("dr-lsp").lspCount,
+						fmt = function (str) return str:gsub("LSP: ", "") end,
+					},
 				},
 				lualine_x = {
 					{ "lsp_status", symbols = { spinner = { "" }, done = "", separator = "," } },
