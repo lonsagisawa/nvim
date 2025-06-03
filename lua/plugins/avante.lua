@@ -3,6 +3,9 @@ return {
 	event = "VeryLazy",
 	version = false,
 	build = "make",
+	init = function()
+		vim.treesitter.language.register("markdown", { "Avante", "AvanteInput" })
+	end,
 	-- Windows
 	-- build = "powershell -ExecutionPolicy Bypass -File Build.ps1 -BuildFromSource false",
 	opts = {
