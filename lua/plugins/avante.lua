@@ -37,37 +37,44 @@ return {
 			"bash",
 		},
 
-		openai = {
-			model = "gpt-4.1",
-			max_tokens = 32768,
-		},
-
-		gemini = {
-			model = "gemini-2.5-flash-preview-05-20",
-			max_tokens = 65536,
-		},
-
-		vendors = {
-			["gemini-2.5-pro"] = {
-				__inherited_from = "gemini",
-				model = "gemini-2.5-pro-preview-05-06",
-				max_tokens = 65536,
-			},
-
-			["gpt-4.1-nano"] = {
-				__inherited_from = "openai",
-				model = "gpt-4.1-nano",
+		providers = {
+			openai = {
+				model = "gpt-4.1",
 				max_tokens = 32768,
 			},
 
-			groq = {
-				__inherited_from = 'openai',
-				api_key_name = 'GROQ_API_KEY',
-				endpoint = 'https://api.groq.com/openai/v1/',
-				model = 'llama-3.3-70b-versatile',
-				max_completion_tokens = 32768,
+			gemini = {
+				model = "gemini-2.5-flash-preview-05-20",
+				extra_request_body = {
+					max_tokens = 65536,
+				},
+			},
+
+			vendors = {
+				["gemini-2.5-pro"] = {
+					__inherited_from = "gemini",
+					model = "gemini-2.5-pro-preview-05-06",
+					extra_request_body = {
+						max_tokens = 65536,
+					},
+				},
+
+				["gpt-4.1-nano"] = {
+					__inherited_from = "openai",
+					model = "gpt-4.1-nano",
+					max_tokens = 32768,
+				},
+
+				groq = {
+					__inherited_from = "openai",
+					api_key_name = "GROQ_API_KEY",
+					endpoint = "https://api.groq.com/openai/v1/",
+					model = "llama-3.3-70b-versatile",
+					max_completion_tokens = 32768,
+				},
 			},
 		},
+
 		file_selector = {
 			provider = "snacks",
 		},
