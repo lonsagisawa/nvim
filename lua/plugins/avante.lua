@@ -56,7 +56,7 @@ return {
 			vendors = {
 				["gemini-2.5-pro"] = {
 					__inherited_from = "gemini",
-					model = "gemini-2.5-pro-preview-05-06",
+					model = "gemini-2.5-pro-preview-06-05",
 					extra_request_body = {
 						max_tokens = 65536,
 					},
