@@ -12,6 +12,7 @@ return {
 		-- Providers: gemini, gemini-2.5-pro, openai(gpt-4.1-nano)
 		provider = "gemini",
 		cursor_applying_provider = "gpt-4.1-nano",
+		mode = "legacy",
 		behaviour = {
 			enable_cursor_planning_mode = true,
 		},
