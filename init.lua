@@ -83,4 +83,6 @@ vim.o.cmdheight = 0
 
 vim.o.winblend = 0
 
+vim.o.shell = "fish"
+
 require("config.keymap")
