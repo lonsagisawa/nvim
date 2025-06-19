@@ -48,23 +48,26 @@ return {
 			},
 
 			gemini = {
-				model = "gemini-2.5-flash-preview-05-20",
+				model = "gemini-2.5-flash",
 				extra_request_body = {
 					max_tokens = 65536,
-					generationConfig = {
-						thinkingConfig = {
-							thinking_budget = 0,
-						},
-					},
 				},
 			},
 
 			vendors = {
 				["gemini-2.5-pro"] = {
 					__inherited_from = "gemini",
-					model = "gemini-2.5-pro-preview-06-05",
+					model = "gemini-2.5-pro",
 					extra_request_body = {
 						max_tokens = 65536,
+					},
+				},
+
+				["gemini-2.5-flash-lite"] = {
+					__inherited_from = "gemini",
+					model = "gemini-2.5-flash-lite-preview-06-17",
+					extra_request_body = {
+						max_tokens = 64000,
 					},
 				},
 
