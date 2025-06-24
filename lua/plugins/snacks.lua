@@ -20,9 +20,8 @@ return {
 					height = 0.9,
 					{
 						box = "vertical",
-						border = "rounded",
-						{ win = "list", border = "none" },
-						{ win = "input", height = 1, border = "top", title = "{title} {live} {flags}", title_pos = "center" },
+						{ win = "list", border = "rounded" },
+						{ win = "input", height = 1, border = "rounded", title = "{title} {live} {flags}", title_pos = "left" },
 					},
 					{
 						win = "preview",
