@@ -17,14 +17,6 @@ return {
 			end
 		end
 
-		local function component__avante_provider()
-			local avante_config = require("avante.config")
-			local provider_details = avante_config.get_provider_config(avante_config.provider)
-
-			-- return avante_config.provider .. " - " .. provider_details.model
-			return provider_details.model
-		end
-
 		require("lualine").setup({
 			options = {
 				theme = "catppuccin-mocha-custom",
@@ -57,27 +49,22 @@ return {
 						fmt = function(str)
 							return string.sub(str, 1, 3)
 						end,
-						padding = 0,
+						padding = { left = 0, right = 1 },
 					},
 				},
 				lualine_b = {
-					{ "b:gitsigns_head", icon = "", padding = { left = 2, right = 1 } },
-				},
-				lualine_c = {
-					{ "aerial", sep = " › " },
-				},
-				lualine_x = {
-					{ "lsp_status", symbols = { spinner = { "" }, done = "", separator = "," } },
-					{ component__avante_provider, icon = "󱚣" },
-					{ require("mcphub.extensions.lualine") },
-				},
-				lualine_y = {
 					{
 						"diff",
 						source = diff_source,
 						symbols = { added = " ", modified = " ", removed = " " },
 					},
 					"diagnostics",
+				},
+				lualine_c = {
+				},
+				lualine_x = {
+				},
+				lualine_y = {
 				},
 				lualine_z = {
 					{ "location", icon = "" },
@@ -95,6 +82,9 @@ return {
 				"nvim-tree",
 			},
 			winbar = {
+				lualine_c = {
+					{ "aerial", sep = " › " },
+				},
 				lualine_z = {
 					{
 						"filetype",
