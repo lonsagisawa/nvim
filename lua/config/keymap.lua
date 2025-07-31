@@ -22,3 +22,12 @@ vim.keymap.set("n", "ga", "<cmd>lua vim.lsp.buf.code_action()<CR>", { desc = "Co
 vim.keymap.set("n", "ge", "<cmd>lua vim.diagnostic.open_float()<CR>")
 vim.keymap.set("n", "g]", "<cmd>lua vim.diagnostic.goto_next()<CR>")
 vim.keymap.set("n", "g[", "<cmd>lua vim.diagnostic.goto_prev()<CR>")
+
+-- set U to redo
+-- https://zenn.dev/vim_jp/articles/43d021f461f3a4
+vim.keymap.set({"n", "x"}, "U", "<c-r>")
+
+-- smart paste indent
+-- https://zenn.dev/vim_jp/articles/43d021f461f3a4
+vim.keymap.set({"n", "x"}, "p", "]p`]")
+vim.keymap.set({"n", "x"}, "P", "]P`]")
