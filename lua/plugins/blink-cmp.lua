@@ -1,6 +1,6 @@
 return {
 	"saghen/blink.cmp",
-	dependencies = { "echasnovski/mini.nvim" },
+	dependencies = { "nvim-mini/mini.nvim" },
 	version = "1.*",
 
 	event = "VeryLazy",

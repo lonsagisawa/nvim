@@ -1,6 +1,6 @@
 return {
 	{
-		"echasnovski/mini.nvim",
+		"nvim-mini/mini.nvim",
 		version = false,
 		lazy = true,
 		config = function()
@@ -123,7 +123,7 @@ return {
 		},
 	},
 	{
-		"echasnovski/mini.trailspace",
+		"nvim-mini/mini.trailspace",
 		event = "VeryLazy",
 		config = function()
 			vim.api.nvim_create_autocmd("BufWritePre", {
