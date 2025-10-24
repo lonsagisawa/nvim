@@ -5,23 +5,25 @@ return {
 		nes = {
 			enabled = false,
 		},
-		prompts = {
-			changes         = "レビューして",
-			document        = "{function|line} にドキュメントを追加して",
-			explain         = "{this} とは",
-			fix             = "{this} を修正して",
-			optimize        = "{this} を最適化して",
-			review          = "{file} の問題点や改善点についてレビューして",
-			tests           = "{this} のテストを書いて",
-			-- simple context prompts
-			buffers         = "{buffers}",
-			file            = "{file}",
-			line            = "{line}",
-			position        = "{position}",
-			quickfix        = "{quickfix}",
-			selection       = "{selection}",
-			["function"]    = "{function}",
-			class           = "{class}",
+		cli = {
+			prompts = {
+				changes      = "変更点のレビューをして",
+				document     = "{function|line} にドキュメントを追加して",
+				explain      = "{this} とは",
+				fix          = "{this} を修正して",
+				optimize     = "{this} を最適化して",
+				review       = "{file} の問題点や改善点についてレビューして",
+				tests        = "{this} のテストを書いて",
+				-- simple context prompts
+				buffers      = "{buffers}",
+				file         = "{file}",
+				line         = "{line}",
+				position     = "{position}",
+				quickfix     = "{quickfix}",
+				selection    = "{selection}",
+				["function"] = "{function}",
+				class        = "{class}",
+			},
 		},
 	},
 	keys = {
