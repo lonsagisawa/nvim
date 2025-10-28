@@ -7,7 +7,6 @@ local mason_servers = {
 	"dockerls",
 	"html",
 	"intelephense",
-	"laravel_ls",
 	"lua_ls",
 	"marksman",
 	"svelte",
@@ -16,11 +15,17 @@ local mason_servers = {
 	"vue_ls",
 }
 
+local non_mason_servers = {
+	"laravel_ls",
+}
+
 require("mason").setup()
 require("mason-lspconfig").setup({
 	ensure_installed = mason_servers,
 	automatic_enable = true,
 })
+
+vim.lsp.enable(non_mason_servers)
 
 -- 読み込み中にくるくる回るアレ
 -- https://github.com/folke/snacks.nvim/blob/main/docs/notifier.md#-examples
