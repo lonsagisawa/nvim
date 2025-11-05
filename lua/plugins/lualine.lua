@@ -19,9 +19,6 @@ return {
 
 		require("lualine").setup({
 			options = {
-				theme = "catppuccin-mocha-custom",
-				section_separators = "",
-				component_separators = "",
 				globalstatus = true,
 				disabled_filetypes = {
 					statusline = {
@@ -36,20 +33,14 @@ return {
 			sections = {
 				lualine_a = {
 					{
-						function()
-							return "█"
-						end,
-						padding = { left = 0, right = 1 },
-					},
-					{
 						"mode",
 						fmt = function(str)
 							return string.sub(str, 1, 3)
 						end,
-						padding = { left = 0, right = 1 },
 					},
 				},
 				lualine_b = {
+					"branch",
 					{
 						"diff",
 						source = diff_source,
@@ -58,6 +49,7 @@ return {
 					"diagnostics",
 				},
 				lualine_c = {
+					"aerial",
 				},
 				lualine_x = {
 				},
@@ -77,63 +69,12 @@ return {
 				},
 				lualine_z = {
 					{ "location", icon = "" },
-					{
-						function()
-							return "█"
-						end,
-						padding = 0,
-					},
 				},
 			},
 			extensions = {
 				"lazy",
 				"mason",
 				"nvim-tree",
-			},
-			winbar = {
-				lualine_c = {
-					{ "aerial", sep = " › " },
-				},
-				lualine_z = {
-					{
-						"filetype",
-						padding = { left = 1, right = 0 },
-						colored = false,
-						icon_only = true,
-					},
-					{
-						"filename",
-						padding = { left = 0, right = 1 },
-						symbols = { unnamed = " [No Name]", modified = "" },
-					},
-					{
-						function()
-							return "█"
-						end,
-						padding = 0,
-					},
-				},
-			},
-			inactive_winbar = {
-				lualine_z = {
-					{
-						"filetype",
-						padding = { left = 1, right = 0 },
-						colored = false,
-						icon_only = true,
-					},
-					{
-						"filename",
-						padding = { left = 0, right = 1 },
-						symbols = { unnamed = " [No Name]", modified = "" },
-					},
-					{
-						function()
-							return "█"
-						end,
-						padding = 0,
-					},
-				},
 			},
 		})
 	end,
