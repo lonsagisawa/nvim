@@ -51,8 +51,7 @@ return {
 				lualine_c = {
 					"aerial",
 				},
-				lualine_x = {
-				},
+				lualine_x = {},
 				lualine_y = {
 					{
 						function()
@@ -65,7 +64,7 @@ return {
 						color = function()
 							return "Special"
 						end,
-					}
+					},
 				},
 				lualine_z = {
 					{ "location", icon = "" },
