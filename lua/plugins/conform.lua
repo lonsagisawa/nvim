@@ -27,6 +27,7 @@ return {
 			typescriptreact = { "biome", "prettier", stop_after_first = true },
 			vue = { "prettier" },
 			svelte = { "prettier" },
+			yaml = { "yamlfmt" },
 		},
 		-- Set default options
 		default_format_opts = {
