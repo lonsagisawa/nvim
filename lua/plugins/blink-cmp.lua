@@ -16,7 +16,6 @@ return {
 
 		completion = {
 			menu = {
-				border = "rounded",
 				draw = {
 					components = {
 						kind_icon = {
@@ -68,13 +67,16 @@ return {
 		},
 
 		sources = {
-			default = { "lazydev", "lsp", "path", "snippets", "buffer" },
+			default = { "lazydev", "lsp", "path", "snippets", "blade-nav", "buffer" },
 
 			providers = {
 				lazydev = {
 					name = "LazyDev",
 					module = "lazydev.integrations.blink",
 					score_offset = 100,
+				},
+				["blade-nav"] = {
+					module = "blade-nav.blink",
 				},
 			},
 		},
