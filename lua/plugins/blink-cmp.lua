@@ -77,6 +77,9 @@ return {
 				},
 				["blade-nav"] = {
 					module = "blade-nav.blink",
+					opts = {
+						close_tag_on_complete = false,
+					},
 				},
 			},
 		},
