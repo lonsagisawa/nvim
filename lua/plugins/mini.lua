@@ -33,6 +33,52 @@ return {
 				},
 			})
 
+			require("mini.clue").setup({
+				window = {
+					delay = 0,
+				},
+
+				triggers = {
+					-- Leader triggers
+					{ mode = { "n", "x" }, keys = "<Leader>" },
+
+					-- `[` and `]` keys
+					{ mode = "n", keys = "[" },
+					{ mode = "n", keys = "]" },
+
+					-- Built-in completion
+					{ mode = "i", keys = "<C-x>" },
+
+					-- `g` key
+					{ mode = { "n", "x" }, keys = "g" },
+
+					-- Marks
+					{ mode = { "n", "x" }, keys = "'" },
+					{ mode = { "n", "x" }, keys = "`" },
+
+					-- Registers
+					{ mode = { "n", "x" }, keys = '"' },
+					{ mode = { "i", "c" }, keys = "<C-r>" },
+
+					-- Window commands
+					{ mode = "n", keys = "<C-w>" },
+
+					-- `z` key
+					{ mode = { "n", "x" }, keys = "z" },
+				},
+
+				clues = {
+					-- Enhance this by adding descriptions for <Leader> mapping groups
+					require("mini.clue").gen_clues.square_brackets(),
+					require("mini.clue").gen_clues.builtin_completion(),
+					require("mini.clue").gen_clues.g(),
+					require("mini.clue").gen_clues.marks(),
+					require("mini.clue").gen_clues.registers(),
+					require("mini.clue").gen_clues.windows(),
+					require("mini.clue").gen_clues.z(),
+				},
+			})
+
 			-- https://gist.github.com/tmerse/dc21ec932860013e56882f23ee9ad8d2
 			require("mini.pairs").setup({
 				-- In which modes mappings from this `config` should be created
