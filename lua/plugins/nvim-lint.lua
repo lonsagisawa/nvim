@@ -9,8 +9,9 @@ return {
 			typescript = { "biome", "eslintd" },
 			javascriptreact = { "biome", "eslintd" },
 			typescriptreact = { "biome", "eslintd" },
-			vue = { "eslintd" },
-			svelte = { "eslintd" },
+			vue = { "biome", "eslintd" },
+			svelte = { "biome", "eslintd" },
+			astro = { "biome", "eslintd" },
 		}
 	end,
 }
