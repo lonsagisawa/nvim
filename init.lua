@@ -85,4 +85,6 @@ vim.o.winblend = 0
 
 vim.o.shell = "fish"
 
+vim.o.winborder = "rounded"
+
 require("config.keymap")
