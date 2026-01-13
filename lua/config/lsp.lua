@@ -1,3 +1,8 @@
+-- Plugins
+MiniDeps.add({ source = "neovim/nvim-lspconfig" })
+MiniDeps.add({ source = "mason-org/mason.nvim" })
+MiniDeps.add({ source = "mason-org/mason-lspconfig.nvim" })
+
 local mason_servers = {
 	"astro",
 	"cssls",
@@ -7,6 +12,7 @@ local mason_servers = {
 	"dockerls",
 	"html",
 	"intelephense",
+	"laravel_ls",
 	"lua_ls",
 	"marksman",
 	"svelte",
@@ -16,7 +22,7 @@ local mason_servers = {
 }
 
 local non_mason_servers = {
-	"laravel_ls",
+	-- Masonのリポジトリに入っていないLSPが出てきたら
 }
 
 require("mason").setup()
