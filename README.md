@@ -1,11 +1,3 @@
-# neovim configuration
+# Neovim configuration
 
-## laravel-ls
-
-```shell
-mise use --global go:github.com/laravel-ls/laravel-ls/cmd/laravel-ls@latest
-```
-
-## Avante
-
-Currently it utilises `gemini-2.0-flash`. Set enviroment variable `GEMINI_API_KEY` for Gemini API key.
+Just another generic webdev neovim configuration. Almost just slapping [Snacks.nvim](https://github.com/folke/snacks.nvim) and [MINI](https://github.com/nvim-mini/mini.nvim) components, and some plugin addition.
