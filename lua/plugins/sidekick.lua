@@ -1,6 +1,4 @@
-local add = MiniDeps.add
-
-add({ source = "folke/sidekick.nvim" })
+MiniDeps.add({ source = "folke/sidekick.nvim" })
 
 require("sidekick").setup({
 	nes = {

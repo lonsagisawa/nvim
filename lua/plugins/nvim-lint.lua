@@ -1,6 +1,4 @@
-local add = MiniDeps.add
-
-add({ source = "mfussenegger/nvim-lint" })
+MiniDeps.add({ source = "mfussenegger/nvim-lint" })
 
 require("lint").linters_by_ft = {
 	php = { "phpcs", "phpstan" },

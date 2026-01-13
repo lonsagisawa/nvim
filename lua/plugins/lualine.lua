@@ -1,6 +1,4 @@
-local add = MiniDeps.add
-
-add({
+MiniDeps.add({
 	source = "nvim-lualine/lualine.nvim",
 	depends = {
 		"lewis6991/gitsigns.nvim",

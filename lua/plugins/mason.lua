@@ -1,3 +1,1 @@
-local add = MiniDeps.add
-
-add({ source = "mason-org/mason.nvim" })
+MiniDeps.add({ source = "mason-org/mason.nvim" })

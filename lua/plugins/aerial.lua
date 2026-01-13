@@ -1,6 +1,4 @@
-local add = MiniDeps.add
-
-add({ source = "stevearc/aerial.nvim" })
+MiniDeps.add({ source = "stevearc/aerial.nvim" })
 
 require("aerial").setup({})
 

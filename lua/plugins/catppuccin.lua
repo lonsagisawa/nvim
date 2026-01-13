@@ -1,6 +1,4 @@
-local add = MiniDeps.add
-
-add({ source = "catppuccin/nvim", name = "catppuccin" })
+MiniDeps.add({ source = "catppuccin/nvim", name = "catppuccin" })
 
 require("catppuccin").setup({
 	flavour = "mocha",

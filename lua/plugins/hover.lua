@@ -1,6 +1,4 @@
-local add = MiniDeps.add
-
-add({ source = "lewis6991/hover.nvim" })
+MiniDeps.add({ source = "lewis6991/hover.nvim" })
 
 require("hover.providers.lsp")
 require("hover.providers.diagnostic")

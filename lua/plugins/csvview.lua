@@ -1,6 +1,4 @@
-local add = MiniDeps.add
-
-add({ source = "hat0uma/csvview.nvim" })
+MiniDeps.add({ source = "hat0uma/csvview.nvim" })
 
 require("csvview").setup({
 	parser = { comments = { "#", "//" } },

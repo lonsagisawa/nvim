@@ -1,6 +1,4 @@
-local add = MiniDeps.add
-
-add({ source = "shortcuts/no-neck-pain.nvim" })
+MiniDeps.add({ source = "shortcuts/no-neck-pain.nvim" })
 
 require("no-neck-pain").setup({
 	width = 160,

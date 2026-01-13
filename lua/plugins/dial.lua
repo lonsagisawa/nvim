@@ -1,6 +1,4 @@
-local add = MiniDeps.add
-
-add({ source = "monaqa/dial.nvim" })
+MiniDeps.add({ source = "monaqa/dial.nvim" })
 
 vim.keymap.set("n", "<C-a>", function()
 	require("dial.map").manipulate("increment", "normal")

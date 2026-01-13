@@ -1,6 +1,4 @@
-local add = MiniDeps.add
-
-add({ source = "folke/trouble.nvim" })
+MiniDeps.add({ source = "folke/trouble.nvim" })
 
 require("trouble").setup({})
 

@@ -1,6 +1,4 @@
-local add = MiniDeps.add
-
-add({ source = "numToStr/Comment.nvim" })
+MiniDeps.add({ source = "numToStr/Comment.nvim" })
 
 require("Comment").setup()
 

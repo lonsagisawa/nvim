@@ -1,3 +1,1 @@
-local add = MiniDeps.add
-
-add({ source = "tpope/vim-sleuth" })
+MiniDeps.add({ source = "tpope/vim-sleuth" })

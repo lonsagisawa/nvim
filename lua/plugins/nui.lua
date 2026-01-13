@@ -1,3 +1,1 @@
-local add = MiniDeps.add
-
-add({ source = "MunifTanjim/nui.nvim" })
+MiniDeps.add({ source = "MunifTanjim/nui.nvim" })

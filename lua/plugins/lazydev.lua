@@ -4,7 +4,6 @@ add({
 	source = "folke/lazydev.nvim",
 	depends = { "Bilal2453/luvit-meta" },
 })
-add({ source = "Bilal2453/luvit-meta" })
 
 require("lazydev").setup({
 	library = {

@@ -1,6 +1,4 @@
-local add = MiniDeps.add
-
-add({ source = "folke/flash.nvim" })
+MiniDeps.add({ source = "folke/flash.nvim" })
 
 require("flash").setup({})
 

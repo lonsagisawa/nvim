@@ -1,6 +1,4 @@
-local add = MiniDeps.add
-
-add({ source = "stevearc/conform.nvim" })
+MiniDeps.add({ source = "stevearc/conform.nvim" })
 
 vim.keymap.set("", "<leader>f", function()
 	require("conform").format({ async = true })

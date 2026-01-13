@@ -1,6 +1,4 @@
-local add = MiniDeps.add
-
-add({
+MiniDeps.add({
 	source = "saghen/blink.cmp",
 	depends = { "rafamadriz/friendly-snippets" },
 	checkout = "v1.8.0", -- check releases for latest tag

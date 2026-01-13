@@ -1,6 +1,4 @@
-local add = MiniDeps.add
-
-add({ source = "b0o/incline.nvim" })
+MiniDeps.add({ source = "b0o/incline.nvim" })
 
 require("incline").setup({
 	window = {

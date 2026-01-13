@@ -1,6 +1,4 @@
-local add = MiniDeps.add
-
-add({ source = "rachartier/tiny-inline-diagnostic.nvim" })
+MiniDeps.add({ source = "rachartier/tiny-inline-diagnostic.nvim" })
 
 require("tiny-inline-diagnostic").setup({
 	preset = "classic",
