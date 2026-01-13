@@ -9,7 +9,7 @@ vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
 -- mini.deps
-require("config.deps")
+require("config.mini-init")
 
 -- setup lsp
 require("config.lsp")
