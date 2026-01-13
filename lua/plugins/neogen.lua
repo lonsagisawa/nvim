@@ -1,7 +1,5 @@
-return {
-	"danymat/neogen",
-	event = "VeryLazy",
-	opts = {
-		snippet_engine = "nvim",
-	},
-}
+MiniDeps.add({ source = "danymat/neogen" })
+
+require("neogen").setup({
+	snippet_engine = "nvim",
+})

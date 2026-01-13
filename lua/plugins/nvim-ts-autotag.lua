@@ -1,5 +1,3 @@
-return {
-	"windwp/nvim-ts-autotag",
-	opts = {},
-	ft = { "html", "javascriptreact", "typescriptreact", "vue", "svelte", "blade", "astro" },
-}
+MiniDeps.add({ source = "windwp/nvim-ts-autotag" })
+
+require("nvim-ts-autotag").setup({})

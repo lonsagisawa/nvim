@@ -1,4 +1,1 @@
-return {
-	"rafamadriz/friendly-snippets",
-	lazy = true,
-}
+MiniDeps.add({ source = "rafamadriz/friendly-snippets" })

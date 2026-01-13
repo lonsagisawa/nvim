@@ -1,11 +1,7 @@
-return {
-	"numToStr/Comment.nvim",
-	event = "VeryLazy",
-	config = function ()
-		require("Comment").setup()
+MiniDeps.add({ source = "numToStr/Comment.nvim" })
 
-		local ft = require("Comment.ft")
+require("Comment").setup()
 
-		ft.blade = { "{{--%s--}}", "{{--%s--}}" }
-	end
-}
+local ft = require("Comment.ft")
+
+ft.blade = { "{{--%s--}}", "{{--%s--}}" }

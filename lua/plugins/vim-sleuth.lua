@@ -1,4 +1,1 @@
-return {
-	"tpope/vim-sleuth",
-	event = "VeryLazy",
-}
+MiniDeps.add({ source = "tpope/vim-sleuth" })

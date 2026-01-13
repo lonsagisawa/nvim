@@ -1,5 +1,3 @@
-return {
-	'ricardoramirezr/blade-nav.nvim',
-	ft = { 'blade', 'php' },
-	opts = {},
-}
+MiniDeps.add({ source = "ricardoramirezr/blade-nav.nvim" })
+
+require("blade-nav").setup({})

@@ -1,4 +1,1 @@
-return {
-	"IogaMaster/neocord",
-	event = "VeryLazy",
-}
+MiniDeps.add({ source = "IogaMaster/neocord" })

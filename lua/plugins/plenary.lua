@@ -1,4 +1,1 @@
-return {
-	"nvim-lua/plenary.nvim",
-	lazy = true,
-}
+MiniDeps.add({ source = "nvim-lua/plenary.nvim" })

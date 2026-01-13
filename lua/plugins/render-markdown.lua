@@ -1,15 +1,11 @@
-return {
-	"MeanderingProgrammer/render-markdown.nvim",
-	ft = { "markdown", "mdx", "AgenticChat" },
-	---@module 'render-markdown'
-	---@type render.md.UserConfig
-	opts = {
-		file_types = { "markdown", "mdx", "AgenticChat" },
+MiniDeps.add({ source = "MeanderingProgrammer/render-markdown.nvim" })
 
-		completions = {
-			blink = {
-				enabled = true,
-			},
+require("render-markdown").setup({
+	file_types = { "markdown", "mdx", "AgenticChat" },
+
+	completions = {
+		blink = {
+			enabled = true,
 		},
 	},
-}
+})

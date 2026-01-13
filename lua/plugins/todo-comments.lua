@@ -1,5 +1,3 @@
-return {
-	"folke/todo-comments.nvim",
-	event = "VeryLazy",
-	opts = {},
-}
+MiniDeps.add({ source = "folke/todo-comments.nvim" })
+
+require("todo-comments").setup({})

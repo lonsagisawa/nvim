@@ -1,25 +1,25 @@
-return {
-	"lewis6991/hover.nvim",
-	opts = {
-		init = function()
-			-- Require providers
-			require("hover.providers.lsp")
-			require('hover.providers.diagnostic')
-		end,
+MiniDeps.add({ source = "lewis6991/hover.nvim" })
 
-		preview_opts = {
-			border = "rounded",
-		},
+require("hover.providers.lsp")
+require("hover.providers.diagnostic")
 
-		-- Whether the contents of a currently open hover window should be moved
-		-- to a :h preview-window when pressing the hover keymap.
-		preview_window = false,
-		title = true,
+require("hover").setup({
+	preview_opts = {
+		border = "rounded",
 	},
-	keys = {
-		{ "K", function() require("hover").open() end, desc = "hover.nvim" },
-		{ "gK", function() require("hover").select() end, desc = "hover.nvim (select)" },
-		{ "<C-p>", function() require("hover").switch("previous") end, desc = "hover.nvim (previous source)" },
-		{ "<C-n>", function() require("hover").switch("next") end, desc = "hover.nvim (next source)" },
-	}
-}
+	preview_window = false,
+	title = true,
+})
+
+vim.keymap.set("", "K", function()
+	require("hover").open()
+end, { desc = "hover.nvim" })
+vim.keymap.set("", "gK", function()
+	require("hover").select()
+end, { desc = "hover.nvim (select)" })
+vim.keymap.set("", "<C-p>", function()
+	require("hover").switch("previous")
+end, { desc = "hover.nvim (previous source)" })
+vim.keymap.set("", "<C-n>", function()
+	require("hover").switch("next")
+end, { desc = "hover.nvim (next source)" })
