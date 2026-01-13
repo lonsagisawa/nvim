@@ -8,8 +8,8 @@ vim.g.loaded_netrwPlugin = 1
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
--- lazy.nvim
-require("config.lazy")
+-- mini.deps
+require("config.deps")
 
 -- setup lsp
 require("config.lsp")
