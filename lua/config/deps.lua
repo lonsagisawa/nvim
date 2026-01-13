@@ -4,17 +4,14 @@ local mini_path = package_path .. "/pack/deps/start/mini.nvim"
 local uv = vim.uv or vim.loop
 
 if not uv.fs_stat(mini_path) then
-	local repo = "https://github.com/echasnovski/mini.nvim"
-	local out = vim.fn.system({ "git", "clone", "--filter=blob:none", repo, mini_path })
-	if vim.v.shell_error ~= 0 then
-		vim.api.nvim_echo({
-			{ "Failed to clone mini.nvim:\n", "ErrorMsg" },
-			{ out, "WarningMsg" },
-			{ "\nPress any key to exit..." },
-		}, true, {})
-		vim.fn.getchar()
-		os.exit(1)
-	end
+	vim.cmd('echo "Installing `mini.nvim`" | redraw')
+	local clone_cmd = {
+		'git', 'clone', '--filter=blob:none',
+		'https://github.com/nvim-mini/mini.nvim', mini_path
+	}
+	vim.fn.system(clone_cmd)
+	vim.cmd('packadd mini.nvim | helptags ALL')
+	vim.cmd('echo "Installed `mini.nvim`" | redraw')
 end
 
 vim.opt.rtp:prepend(mini_path)
@@ -31,7 +28,7 @@ local function normalize_specs(spec)
 	if spec == nil then
 		return {}
 	end
-	if vim.tbl_islist(spec) then
+	if vim.islist(spec) then
 		return spec
 	end
 	return { spec }
