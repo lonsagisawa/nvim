@@ -68,39 +68,6 @@ return {
 				tabline = true,
 			}
 		},
-		dashboard = {
-			sections = {
-				{ section = "header" },
-				{ section = "keys" },
-				{
-					pane = 2,
-					icon = " ",
-					title = "Git Status",
-					section = "terminal",
-					enabled = function()
-						return Snacks.git.get_root() ~= nil
-					end,
-					cmd = "git status --short --branch --renames",
-					height = 5,
-					padding = 1,
-					ttl = 5 * 60,
-					indent = 3,
-				},
-				{ section = "projects", pane = 2 },
-				{ section = "startup", pane = 2 },
-			},
-			preset = {
-				keys = {
-					{ icon = "", key = "<Space>", desc = "Smart Finder", action = function() Snacks.dashboard.pick('smart') end, },
-					{ icon = "", key = "g", desc = "Grep", action = function() require("grug-far").open() end, },
-					{ icon = "", key = "e", desc = "File Explorer", action = function() require("mini.files").open() end, },
-					{ icon = "", key = "lg", desc = "LazyGit", action = function() Snacks.lazygit.open() end, },
-					{ icon = "󰐱", key = "ll", desc = "Lazy", action = ":Lazy" },
-					{ icon = "", key = "t", desc = "Terminal", action = function() Snacks.terminal.toggle() end, },
-					{ icon = "󰩈", key = "q", desc = "Quit", action = ":qa" },
-				}
-			},
-		},
 	},
 	keys = {
 		-- Lazygit
