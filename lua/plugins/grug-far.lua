@@ -1,5 +1,9 @@
+local add = MiniDeps.add
+
+add({ source = "MagicDuck/grug-far.nvim" })
+
 return {
-	"MagicDuck/grug-far.nvim",
+	source = "MagicDuck/grug-far.nvim",
 	config = function() end,
 	keys = {
 		{

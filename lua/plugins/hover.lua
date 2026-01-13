@@ -1,10 +1,14 @@
+local add = MiniDeps.add
+
+add({ source = "lewis6991/hover.nvim" })
+
 return {
-	"lewis6991/hover.nvim",
+	source = "lewis6991/hover.nvim",
 	opts = {
 		init = function()
 			-- Require providers
 			require("hover.providers.lsp")
-			require('hover.providers.diagnostic')
+			require("hover.providers.diagnostic")
 		end,
 
 		preview_opts = {
@@ -21,5 +25,5 @@ return {
 		{ "gK", function() require("hover").select() end, desc = "hover.nvim (select)" },
 		{ "<C-p>", function() require("hover").switch("previous") end, desc = "hover.nvim (previous source)" },
 		{ "<C-n>", function() require("hover").switch("next") end, desc = "hover.nvim (next source)" },
-	}
+	},
 }

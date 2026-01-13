@@ -1,5 +1,9 @@
+local add = MiniDeps.add
+
+add({ source = "monaqa/dial.nvim" })
+
 return {
-	"monaqa/dial.nvim",
+	source = "monaqa/dial.nvim",
 	-- stylua: ignore
 	keys = {
 		{ "<C-a>", function () require("dial.map").manipulate("increment", "normal") end, mode = "n" },

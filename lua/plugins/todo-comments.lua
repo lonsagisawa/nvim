@@ -1,5 +1,8 @@
+local add = MiniDeps.add
+
+add({ source = "folke/todo-comments.nvim" })
+
 return {
-	"folke/todo-comments.nvim",
-	event = "VeryLazy",
+	source = "folke/todo-comments.nvim",
 	opts = {},
 }

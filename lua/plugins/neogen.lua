@@ -1,6 +1,9 @@
+local add = MiniDeps.add
+
+add({ source = "danymat/neogen" })
+
 return {
-	"danymat/neogen",
-	event = "VeryLazy",
+	source = "danymat/neogen",
 	opts = {
 		snippet_engine = "nvim",
 	},

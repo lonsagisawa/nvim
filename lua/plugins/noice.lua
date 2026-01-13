@@ -1,6 +1,12 @@
+local add = MiniDeps.add
+
+add({
+	source = "folke/noice.nvim",
+	depends = { "MunifTanjim/nui.nvim" },
+})
+
 return {
-	"folke/noice.nvim",
-	event = "VeryLazy",
+	source = "folke/noice.nvim",
 	opts = {
 		cmdline = {
 			enabled = true,

@@ -1,8 +1,10 @@
+local add = MiniDeps.add
+
+add({ source = "catppuccin/nvim", name = "catppuccin" })
+
 return {
-	"catppuccin/nvim",
-	name = "catppuccin",
-	lazy = true,
-	priority = 1000,
+	source = "catppuccin/nvim",
+	module = "catppuccin",
 	opts = {
 		flavour = "mocha",
 		integrations = {

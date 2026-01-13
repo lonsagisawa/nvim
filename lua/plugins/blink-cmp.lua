@@ -1,10 +1,9 @@
+local add = MiniDeps.add
+
+add({ source = "saghen/blink.cmp" })
+
 return {
-	"saghen/blink.cmp",
-	dependencies = { "nvim-mini/mini.nvim" },
-	version = "1.*",
-
-	event = "VeryLazy",
-
+	source = "saghen/blink.cmp",
 	---@module 'blink.cmp'
 	---@type blink.cmp.Config
 	opts = {
@@ -86,5 +85,4 @@ return {
 
 		fuzzy = { implementation = "prefer_rust_with_warning" },
 	},
-	opts_extend = { "sources.default" },
 }

@@ -1,8 +1,10 @@
+local add = MiniDeps.add
+
+add({ source = "nvim-mini/mini.trailspace" })
+
 return {
 	{
-		"nvim-mini/mini.nvim",
-		version = false,
-		lazy = true,
+		source = "nvim-mini/mini.nvim",
 		config = function()
 			require("mini.basics").setup({
 				options = {
@@ -169,8 +171,7 @@ return {
 		},
 	},
 	{
-		"nvim-mini/mini.trailspace",
-		event = "VeryLazy",
+		source = "nvim-mini/mini.trailspace",
 		config = function()
 			vim.api.nvim_create_autocmd("BufWritePre", {
 				callback = function()

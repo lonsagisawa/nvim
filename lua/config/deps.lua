@@ -22,8 +22,6 @@ require("mini.deps").setup({
 	},
 })
 
-local add = MiniDeps.add
-
 local function normalize_specs(spec)
 	if spec == nil then
 		return {}
@@ -40,126 +38,6 @@ local function module_from_source(source)
 	end
 	local name = source:match("/([^/]+)$") or source
 	return name:gsub("%.nvim$", "")
-end
-
-local function is_mini_core(source)
-	return source == "nvim-mini/mini.nvim"
-end
-
-local function wrap_build(build)
-	if type(build) ~= "function" then
-		return nil
-	end
-	return function(hook)
-		if hook and hook.name then
-			pcall(vim.cmd, "packadd " .. hook.name)
-		end
-		build(hook)
-	end
-end
-
-local function to_dep_spec(dep)
-	if type(dep) == "string" then
-		if is_mini_core(dep) then
-			return nil
-		end
-		return { source = dep }
-	end
-	if type(dep) ~= "table" then
-		return nil
-	end
-	local source = dep.source or dep[1]
-	if not source or is_mini_core(source) then
-		return nil
-	end
-
-	local out = { source = source }
-	if dep.name then
-		out.name = dep.name
-	end
-
-	local checkout = dep.checkout or dep.branch or dep.tag or dep.commit
-	if checkout then
-		out.checkout = checkout
-	end
-
-	local deps = dep.dependencies or dep.depends
-	if type(deps) == "table" then
-		local items = {}
-		for _, child in ipairs(deps) do
-			local child_spec = to_dep_spec(child)
-			if child_spec then
-				table.insert(items, child_spec)
-			end
-		end
-		if #items > 0 then
-			out.depends = items
-		end
-	end
-
-	local build_hook = wrap_build(dep.build)
-	if build_hook then
-		out.hooks = out.hooks or {}
-		out.hooks.post_install = build_hook
-		out.hooks.post_checkout = build_hook
-	end
-
-	return out
-end
-
-local function to_entry(spec)
-	if type(spec) == "string" then
-		return { source = spec, mini_spec = { source = spec } }
-	end
-	if type(spec) ~= "table" then
-		return nil
-	end
-
-	local source = spec.source or spec[1]
-	if not source then
-		return nil
-	end
-
-	local mini_spec = { source = source }
-	if spec.name then
-		mini_spec.name = spec.name
-	end
-
-	local checkout = spec.checkout or spec.branch or spec.tag or spec.commit
-	if checkout then
-		mini_spec.checkout = checkout
-	end
-
-	local deps = spec.dependencies or spec.depends
-	if type(deps) == "table" then
-		local items = {}
-		for _, dep in ipairs(deps) do
-			local dep_spec = to_dep_spec(dep)
-			if dep_spec then
-				table.insert(items, dep_spec)
-			end
-		end
-		if #items > 0 then
-			mini_spec.depends = items
-		end
-	end
-
-	local build_hook = wrap_build(spec.build)
-	if build_hook then
-		mini_spec.hooks = mini_spec.hooks or {}
-		mini_spec.hooks.post_install = build_hook
-		mini_spec.hooks.post_checkout = build_hook
-	end
-
-	return {
-		source = source,
-		mini_spec = mini_spec,
-		init = spec.init,
-		config = spec.config,
-		opts = spec.opts,
-		keys = spec.keys,
-		module = spec.main or spec.name,
-	}
 end
 
 local function apply_keys(keys)
@@ -250,9 +128,8 @@ local function collect_entries()
 		local ok, spec = pcall(require, module_name)
 		if ok then
 			for _, item in ipairs(normalize_specs(spec)) do
-				local entry = to_entry(item)
-				if entry then
-					table.insert(entries, entry)
+				if type(item) == "table" then
+					table.insert(entries, item)
 				end
 			end
 		else
@@ -263,21 +140,10 @@ local function collect_entries()
 		end
 	end
 
-	table.insert(entries, {
-		source = "MunifTanjim/nui.nvim",
-		mini_spec = { source = "MunifTanjim/nui.nvim" },
-	})
-
 	return entries
 end
 
 local entries = collect_entries()
-
-for _, entry in ipairs(entries) do
-	if not is_mini_core(entry.source) then
-		add(entry.mini_spec)
-	end
-end
 
 for _, entry in ipairs(entries) do
 	run_config(entry)

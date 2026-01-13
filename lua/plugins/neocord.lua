@@ -1,4 +1,7 @@
+local add = MiniDeps.add
+
+add({ source = "IogaMaster/neocord" })
+
 return {
-	"IogaMaster/neocord",
-	event = "VeryLazy",
+	source = "IogaMaster/neocord",
 }

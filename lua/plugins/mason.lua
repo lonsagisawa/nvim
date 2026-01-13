@@ -1,4 +1,8 @@
+local add = MiniDeps.add
+
+add({ source = "mason-org/mason.nvim" })
+
 return {
-	"mason-org/mason.nvim",
+	source = "mason-org/mason.nvim",
 	-- 設定をここに書かない！config/lsp.luaにまとめて書いている
 }

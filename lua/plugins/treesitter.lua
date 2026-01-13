@@ -1,11 +1,29 @@
+local add = MiniDeps.add
+
+local function treesitter_build(hook)
+	if hook and hook.name then
+		pcall(vim.cmd, "packadd " .. hook.name)
+	end
+	require("nvim-treesitter").update()
+end
+
+add({
+	source = "nvim-treesitter/nvim-treesitter",
+	checkout = "main",
+	hooks = {
+		post_install = treesitter_build,
+		post_checkout = treesitter_build,
+	},
+})
+add({
+	source = "nvim-treesitter/nvim-treesitter-textobjects",
+	checkout = "main",
+	depends = { "nvim-treesitter/nvim-treesitter" },
+})
+
 return {
 	{
-		"nvim-treesitter/nvim-treesitter",
-		branch = "main",
-		lazy = false,
-		build = function()
-			require("nvim-treesitter").update()
-		end,
+		source = "nvim-treesitter/nvim-treesitter",
 		-- https://github.com/nvim-treesitter/nvim-treesitter/discussions/7894#discussioncomment-13296610
 		init = function()
 			vim.api.nvim_create_autocmd("FileType", {
@@ -24,8 +42,6 @@ return {
 		end,
 	},
 	{
-		"nvim-treesitter/nvim-treesitter-textobjects",
-		event = "VeryLazy",
-		branch = "main",
+		source = "nvim-treesitter/nvim-treesitter-textobjects",
 	},
 }

@@ -1,6 +1,9 @@
+local add = MiniDeps.add
+
+add({ source = "MeanderingProgrammer/render-markdown.nvim" })
+
 return {
-	"MeanderingProgrammer/render-markdown.nvim",
-	ft = { "markdown", "mdx", "AgenticChat" },
+	source = "MeanderingProgrammer/render-markdown.nvim",
 	---@module 'render-markdown'
 	---@type render.md.UserConfig
 	opts = {

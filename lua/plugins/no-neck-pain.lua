@@ -1,6 +1,9 @@
+local add = MiniDeps.add
+
+add({ source = "shortcuts/no-neck-pain.nvim" })
+
 return {
-	"shortcuts/no-neck-pain.nvim",
-	event = "VeryLazy",
+	source = "shortcuts/no-neck-pain.nvim",
 	opts = {
 		width = 160,
 		autocmds = {

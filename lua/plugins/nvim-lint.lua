@@ -1,6 +1,9 @@
+local add = MiniDeps.add
+
+add({ source = "mfussenegger/nvim-lint" })
+
 return {
-	"mfussenegger/nvim-lint",
-	event = "VeryLazy",
+	source = "mfussenegger/nvim-lint",
 	config = function()
 		require("lint").linters_by_ft = {
 			php = { "phpcs", "phpstan" },

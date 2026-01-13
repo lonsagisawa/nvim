@@ -1,7 +1,9 @@
+local add = MiniDeps.add
+
+add({ source = "folke/snacks.nvim" })
+
 return {
-	"folke/snacks.nvim",
-	priority = 1000,
-	lazy = false,
+	source = "folke/snacks.nvim",
 	---@type snacks.Config
 	opts = {
 		bigfile = {
@@ -66,7 +68,7 @@ return {
 			show = {
 				statusline = true,
 				tabline = true,
-			}
+			},
 		},
 	},
 	keys = {
@@ -120,5 +122,5 @@ return {
 
 		-- zen
 		{ "<leader>z", function() Snacks.zen() end, desc = "Zen" },
-	}
+	},
 }

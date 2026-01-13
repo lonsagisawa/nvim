@@ -1,4 +1,7 @@
+local add = MiniDeps.add
+
+add({ source = "tpope/vim-sleuth" })
+
 return {
-	"tpope/vim-sleuth",
-	event = "VeryLazy",
+	source = "tpope/vim-sleuth",
 }

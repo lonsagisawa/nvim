@@ -1,5 +1,9 @@
+local add = MiniDeps.add
+
+add({ source = "b0o/incline.nvim" })
+
 return {
-	"b0o/incline.nvim",
+	source = "b0o/incline.nvim",
 	opts = {
 		window = {
 			padding = 0,
@@ -27,5 +31,4 @@ return {
 			}
 		end,
 	},
-	event = "VeryLazy",
 }

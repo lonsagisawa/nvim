@@ -1,5 +1,9 @@
+local add = MiniDeps.add
+
+add({ source = "folke/sidekick.nvim" })
+
 return {
-	"folke/sidekick.nvim",
+	source = "folke/sidekick.nvim",
 	opts = {
 		nes = {
 			enabled = false,

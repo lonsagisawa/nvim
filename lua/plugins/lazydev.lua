@@ -1,7 +1,14 @@
+local add = MiniDeps.add
+
+add({
+	source = "folke/lazydev.nvim",
+	depends = { "Bilal2453/luvit-meta" },
+})
+add({ source = "Bilal2453/luvit-meta" })
+
 return {
 	{
-		"folke/lazydev.nvim",
-		ft = "lua",
+		source = "folke/lazydev.nvim",
 		opts = {
 			library = {
 				-- See the configuration section for more details
@@ -10,5 +17,5 @@ return {
 			},
 		},
 	},
-	{ "Bilal2453/luvit-meta", lazy = true }, -- optional `vim.uv` typings
+	{ source = "Bilal2453/luvit-meta" }, -- optional `vim.uv` typings
 }

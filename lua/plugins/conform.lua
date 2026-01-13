@@ -1,7 +1,9 @@
+local add = MiniDeps.add
+
+add({ source = "stevearc/conform.nvim" })
+
 return {
-	"stevearc/conform.nvim",
-	event = { "BufWritePre" },
-	cmd = { "ConformInfo" },
+	source = "stevearc/conform.nvim",
 	keys = {
 		{
 			-- Customize or remove this keymap to your liking

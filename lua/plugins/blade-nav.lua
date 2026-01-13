@@ -1,5 +1,8 @@
+local add = MiniDeps.add
+
+add({ source = "ricardoramirezr/blade-nav.nvim" })
+
 return {
-	'ricardoramirezr/blade-nav.nvim',
-	ft = { 'blade', 'php' },
+	source = "ricardoramirezr/blade-nav.nvim",
 	opts = {},
 }

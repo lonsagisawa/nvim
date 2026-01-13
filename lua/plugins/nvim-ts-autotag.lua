@@ -1,5 +1,8 @@
+local add = MiniDeps.add
+
+add({ source = "windwp/nvim-ts-autotag" })
+
 return {
-	"windwp/nvim-ts-autotag",
+	source = "windwp/nvim-ts-autotag",
 	opts = {},
-	ft = { "html", "javascriptreact", "typescriptreact", "vue", "svelte", "blade", "astro" },
 }

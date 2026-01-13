@@ -1,4 +1,7 @@
+local add = MiniDeps.add
+
+add({ source = "rafamadriz/friendly-snippets" })
+
 return {
-	"rafamadriz/friendly-snippets",
-	lazy = true,
+	source = "rafamadriz/friendly-snippets",
 }

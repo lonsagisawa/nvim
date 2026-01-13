@@ -1,4 +1,7 @@
+local add = MiniDeps.add
+
+add({ source = "nvim-lua/plenary.nvim" })
+
 return {
-	"nvim-lua/plenary.nvim",
-	lazy = true,
+	source = "nvim-lua/plenary.nvim",
 }

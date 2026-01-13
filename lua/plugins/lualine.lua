@@ -1,10 +1,15 @@
-return {
-	"nvim-lualine/lualine.nvim",
-	event = "VeryLazy",
-	dependencies = {
+local add = MiniDeps.add
+
+add({
+	source = "nvim-lualine/lualine.nvim",
+	depends = {
 		"lewis6991/gitsigns.nvim",
 		"stevearc/aerial.nvim",
 	},
+})
+
+return {
+	source = "nvim-lualine/lualine.nvim",
 	config = function()
 		local function diff_source()
 			local gitsigns = vim.b.gitsigns_status_dict

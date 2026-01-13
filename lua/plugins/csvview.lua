@@ -1,5 +1,9 @@
+local add = MiniDeps.add
+
+add({ source = "hat0uma/csvview.nvim" })
+
 return {
-	"hat0uma/csvview.nvim",
+	source = "hat0uma/csvview.nvim",
 	---@module "csvview"
 	---@type CsvView.Options
 	opts = {
@@ -21,5 +25,4 @@ return {
 			display_mode = "border",
 		},
 	},
-	cmd = { "CsvViewEnable", "CsvViewDisable", "CsvViewToggle" },
 }
