@@ -67,6 +67,9 @@ require("snacks").setup({
 	},
 })
 
+-- stylua: ignore start
+
+-- keybinds
 vim.keymap.set("", "<leader>gg", function() Snacks.lazygit.open() end, { desc = "LazyGit" })
 vim.keymap.set("", "<leader>t", function() Snacks.terminal.toggle() end, { desc = "Terminal" })
 vim.keymap.set("", "<leader>z", function() Snacks.zen() end, { desc = "Zen" })
@@ -79,8 +82,7 @@ vim.keymap.set("", "<leader>:", function() Snacks.picker.command_history() end, 
 vim.keymap.set("", "<leader>n", function() Snacks.picker.notifications() end, { desc = "Notification History" })
 vim.keymap.set("", "<leader>sb", function() Snacks.picker.lines() end, { desc = "Buffer Lines" })
 vim.keymap.set("", "<leader>sB", function() Snacks.picker.grep_buffers() end, { desc = "Grep Open Buffers" })
-vim.keymap.set({ "n", "x" }, "<leader>sw", function() Snacks.picker.grep_word() end,
-	{ desc = "Visual selection or word" })
+vim.keymap.set({ "n", "x" }, "<leader>sw", function() Snacks.picker.grep_word() end, { desc = "Visual selection or word" })
 vim.keymap.set("", '<leader>s"', function() Snacks.picker.registers() end, { desc = "Registers" })
 vim.keymap.set("", '<leader>s/', function() Snacks.picker.search_history() end, { desc = "Search History" })
 vim.keymap.set("", "<leader>sa", function() Snacks.picker.autocmds() end, { desc = "Autocmds" })
@@ -110,3 +112,5 @@ vim.keymap.set("", "gI", function() Snacks.picker.lsp_implementations() end, { d
 vim.keymap.set("", "gy", function() Snacks.picker.lsp_type_definitions() end, { desc = "Goto T[y]pe Definition" })
 vim.keymap.set("", "<leader>ss", function() Snacks.picker.lsp_symbols() end, { desc = "LSP Symbols" })
 vim.keymap.set("", "<leader>sS", function() Snacks.picker.lsp_workspace_symbols() end, { desc = "LSP Workspace Symbols" })
+
+-- stylua: ignore end
