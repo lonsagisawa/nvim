@@ -57,6 +57,22 @@ require("lualine").setup({
 			{ "location", icon = "" },
 		},
 	},
+	winbar = {
+		lualine_a = { "filename" },
+		lualine_b = {},
+		lualine_c = {},
+		lualine_x = {},
+		lualine_y = {},
+		lualine_z = {},
+	},
+	inactive_winbar = {
+		lualine_a = { "filename" },
+		lualine_b = {},
+		lualine_c = {},
+		lualine_x = {},
+		lualine_y = {},
+		lualine_z = {},
+	},
 	extensions = {
 		"mason",
 		"nvim-tree",
