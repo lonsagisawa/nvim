@@ -1,6 +1,5 @@
-local data_path = vim.fn.stdpath("data")
-local package_path = data_path .. "/site"
-local mini_path = package_path .. "/pack/deps/start/mini.nvim"
+local path_package = vim.fn.stdpath("data") .. "/site"
+local mini_path = path_package .. "/pack/deps/start/mini.nvim"
 local uv = vim.uv or vim.loop
 
 if not uv.fs_stat(mini_path) then
@@ -14,13 +13,7 @@ if not uv.fs_stat(mini_path) then
 	vim.cmd('echo "Installed `mini.nvim`" | redraw')
 end
 
-vim.opt.rtp:prepend(mini_path)
-
-require("mini.deps").setup({
-	path = {
-		package = package_path,
-	},
-})
+require("mini.deps").setup()
 
 local function load_plugins()
 	local plugin_dir = vim.fn.stdpath("config") .. "/lua/plugins"
@@ -41,4 +34,5 @@ end
 
 load_plugins()
 
-vim.keymap.set({ "n", "x" }, "<leader>ll", "<cmd>DepsUpdate<cr>", { desc = "Update plugins" })
+vim.keymap.set({ "n", "x" }, "<leader>du", "<cmd>DepsUpdate<cr>", { desc = "Update plugins" })
+vim.keymap.set({ "n", "x" }, "<leader>dc", "<cmd>DepsClean<cr>", { desc = "Cleanup unused plugins" })
