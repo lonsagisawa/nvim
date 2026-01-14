@@ -18,7 +18,7 @@ require("noice").setup({
 	},
 	lsp = {
 		progress = {
-			enabled = false,
+			enabled = true,
 		},
 		hover = {
 			enabled = false,
