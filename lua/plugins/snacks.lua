@@ -17,8 +17,14 @@ require("snacks").setup({
 				height = 0.9,
 				{
 					box = "vertical",
-					{ win = "list",  border = "rounded" },
-					{ win = "input", height = 1,        border = "rounded", title = "{title} {live} {flags}", title_pos = "left" },
+					{ win = "list", border = "rounded" },
+					{
+						win = "input",
+						height = 1,
+						border = "rounded",
+						title = "{title} {live} {flags}",
+						title_pos = "left",
+					},
 				},
 				{
 					win = "preview",
