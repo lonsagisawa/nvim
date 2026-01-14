@@ -110,3 +110,6 @@ vim.api.nvim_create_autocmd("BufWritePre", {
 		MiniTrailspace.trim_last_lines()
 	end,
 })
+
+vim.keymap.set({ "n", "x" }, "<leader>du", "<cmd>DepsUpdate<cr>", { desc = "Update plugins" })
+vim.keymap.set({ "n", "x" }, "<leader>dc", "<cmd>DepsClean<cr>", { desc = "Cleanup unused plugins" })
