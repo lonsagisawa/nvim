@@ -1,16 +1,8 @@
-local function treesitter_build(hook)
-	if hook and hook.name then
-		pcall(vim.cmd, "packadd " .. hook.name)
-	end
-	require("nvim-treesitter").update()
-end
-
 MiniDeps.add({
 	source = "nvim-treesitter/nvim-treesitter",
 	checkout = "main",
 	hooks = {
-		post_install = treesitter_build,
-		post_checkout = treesitter_build,
+		post_checkout = function() require("nvim-treesitter").update() end
 	},
 })
 
