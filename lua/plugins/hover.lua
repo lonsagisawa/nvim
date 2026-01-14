@@ -3,13 +3,7 @@ MiniDeps.add({ source = "lewis6991/hover.nvim" })
 require("hover.providers.lsp")
 require("hover.providers.diagnostic")
 
-require("hover").setup({
-	preview_opts = {
-		border = "rounded",
-	},
-	preview_window = false,
-	title = true,
-})
+require("hover").config({})
 
 vim.keymap.set("", "K", function()
 	require("hover").open()
