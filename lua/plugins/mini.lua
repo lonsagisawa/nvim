@@ -9,6 +9,7 @@ require("mini.icons").setup()
 require("mini.ai").setup()
 require("mini.surround").setup()
 require("mini.move").setup()
+require("mini.trailspace").setup()
 
 MiniIcons.mock_nvim_web_devicons()
 
@@ -109,5 +110,3 @@ vim.api.nvim_create_autocmd("BufWritePre", {
 		MiniTrailspace.trim_last_lines()
 	end,
 })
-
-require("mini.trailspace").setup()
