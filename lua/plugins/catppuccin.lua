@@ -55,22 +55,6 @@ require("catppuccin").setup({
 				bg = colors.base,
 				fg = colors.mauve,
 			},
-			MiniStatuslineDevinfo = {
-				bg = colors.surface0,
-				fg = colors.blue,
-			},
-			MiniStatuslineFileinfo = {
-				bg = colors.surface0,
-				fg = colors.blue,
-			},
-			InclineNormal = {
-				bg = colors.blue,
-				fg = colors.base,
-			},
-			InclineNormalNC = {
-				bg = colors.mantle,
-				fg = colors.overlay0,
-			},
 		}
 	end,
 })
