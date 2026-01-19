@@ -1,6 +1,4 @@
-local add = MiniDeps.add
-
-add({
+MiniDeps.add({
 	source = "folke/lazydev.nvim",
 	depends = { "Bilal2453/luvit-meta" },
 })
