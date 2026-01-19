@@ -13,6 +13,60 @@ require("mini.trailspace").setup()
 
 MiniIcons.mock_nvim_web_devicons()
 
+local function statusline_content(is_active)
+	local mode, mode_hl = MiniStatusline.section_mode({ trunc_width = 75 })
+	mode = mode:sub(1, 3):upper()
+	if not is_active then
+		mode_hl = "MiniStatuslineInactive"
+	end
+
+	local aerial_loc = ""
+	if is_active then
+		local ok, aerial = pcall(require, "aerial")
+		if ok then
+			local symbols = aerial.get_location(true)
+			local parts = {}
+			for _, s in ipairs(symbols) do
+				table.insert(parts, s.icon .. " " .. s.name)
+			end
+			aerial_loc = table.concat(parts, " > ")
+		end
+	end
+
+	return MiniStatusline.combine_groups({
+		{ hl = mode_hl, strings = { mode } },
+		{
+			hl = is_active and "MiniStatuslineDevinfo" or "MiniStatuslineInactive",
+			strings = {
+				MiniStatusline.section_git({ trunc_width = 40 }),
+				MiniStatusline.section_diff({ trunc_width = 75 }),
+				MiniStatusline.section_diagnostics({ trunc_width = 75 }),
+				MiniStatusline.section_lsp({ trunc_width = 75 }),
+			},
+		},
+		"%<",
+		{
+			hl = is_active and "MiniStatuslineFilename" or "MiniStatuslineInactive",
+			strings = { aerial_loc },
+		},
+		"%=",
+		{ hl = "MiniStatuslineFileinfo", strings = { "" } },
+		{
+			hl = mode_hl,
+			strings = {
+				MiniStatusline.section_location({ trunc_width = 999999999 }),
+			},
+		},
+	})
+end
+
+require("mini.statusline").setup({
+	content = {
+		active = function() return statusline_content(true) end,
+		inactive = function() return statusline_content(false) end,
+	},
+})
+
 require("mini.splitjoin").setup({
 	mappings = {
 		toggle = "J",
