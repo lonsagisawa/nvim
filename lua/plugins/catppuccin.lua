@@ -55,11 +55,11 @@ require("catppuccin").setup({
 				bg = colors.base,
 				fg = colors.mauve,
 			},
-			MiniStatuslineDevInfo = {
+			MiniStatuslineDevinfo = {
 				bg = colors.surface0,
 				fg = colors.blue,
 			},
-			MiniStatuslineFileInfo = {
+			MiniStatuslineFileinfo = {
 				bg = colors.surface0,
 				fg = colors.blue,
 			},
