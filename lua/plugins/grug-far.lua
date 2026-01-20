@@ -1,5 +1,7 @@
 MiniDeps.add({ source = "MagicDuck/grug-far.nvim" })
 
-vim.keymap.set("", "<leader>sg", function()
-	require("grug-far").open()
-end, { desc = "grug-far" })
+MiniDeps.later(function()
+	vim.keymap.set("", "<leader>sg", function()
+		require("grug-far").open()
+	end, { desc = "grug-far" })
+end)

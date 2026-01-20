@@ -3,8 +3,10 @@ MiniDeps.add({
 	depends = { "Bilal2453/luvit-meta" },
 })
 
-require("lazydev").setup({
-	library = {
-		{ path = "luvit-meta/library", words = { "vim%.uv" } },
-	},
-})
+MiniDeps.later(function()
+	require("lazydev").setup({
+		library = {
+			{ path = "luvit-meta/library", words = { "vim%.uv" } },
+		},
+	})
+end)

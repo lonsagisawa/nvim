@@ -1,7 +1,9 @@
 MiniDeps.add({ source = "rachartier/tiny-inline-diagnostic.nvim" })
 
-require("tiny-inline-diagnostic").setup({
-	preset = "classic",
-})
+MiniDeps.later(function()
+	require("tiny-inline-diagnostic").setup({
+		preset = "classic",
+	})
 
-vim.diagnostic.config({ virtual_text = false })
+	vim.diagnostic.config({ virtual_text = false })
+end)

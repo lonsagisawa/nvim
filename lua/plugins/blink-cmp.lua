@@ -4,75 +4,76 @@ MiniDeps.add({
 	checkout = "v1.8.0", -- check releases for latest tag
 })
 
-require("blink.cmp").setup({
-	keymap = { preset = "enter" },
+MiniDeps.later(function()
+	require("blink.cmp").setup({
+		keymap = { preset = "enter" },
 
-	appearance = { nerd_font_variant = "normal" },
+		appearance = { nerd_font_variant = "normal" },
 
-	snippets = { preset = "default" },
+		snippets = { preset = "default" },
 
-	completion = {
-		menu = {
-			draw = {
-				components = {
-					kind_icon = {
-						text = function(ctx)
-							local kind_icon, _, _ = require("mini.icons").get("lsp", ctx
-								.kind)
-							return kind_icon
-						end,
+		completion = {
+			menu = {
+				draw = {
+					components = {
+						kind_icon = {
+							text = function(ctx)
+								local kind_icon, _, _ = require("mini.icons").get("lsp", ctx.kind)
+								return kind_icon
+							end,
 
-						highlight = function(ctx)
-							local _, hl, _ = require("mini.icons").get("lsp", ctx.kind)
-							return hl
-						end,
+							highlight = function(ctx)
+								local _, hl, _ = require("mini.icons").get("lsp", ctx.kind)
+								return hl
+							end,
+						},
+
+						kind = {
+							highlight = function(ctx)
+								local _, hl, _ = require("mini.icons").get("lsp", ctx.kind)
+								return hl
+							end,
+						},
 					},
 
-					kind = {
-						highlight = function(ctx)
-							local _, hl, _ = require("mini.icons").get("lsp", ctx.kind)
-							return hl
-						end,
+					columns = {
+						{ "kind_icon", "label", "label_description", gap = 1 },
+						{ "source_name" },
+					},
+
+					treesitter = { "lsp" },
+				},
+			},
+
+			ghost_text = { enabled = true },
+
+			documentation = {
+				auto_show = true,
+			},
+		},
+
+		signature = {
+			enabled = true,
+		},
+
+		sources = {
+			default = { "lazydev", "lsp", "path", "snippets", "blade-nav", "buffer" },
+
+			providers = {
+				lazydev = {
+					name = "LazyDev",
+					module = "lazydev.integrations.blink",
+					score_offset = 100,
+				},
+				["blade-nav"] = {
+					module = "blade-nav.blink",
+					opts = {
+						close_tag_on_complete = false,
 					},
 				},
-
-				columns = {
-					{ "kind_icon",  "label", "label_description", gap = 1 },
-					{ "source_name" },
-				},
-
-				treesitter = { "lsp" },
 			},
 		},
 
-		ghost_text = { enabled = true },
-
-		documentation = {
-			auto_show = true,
-		},
-	},
-
-	signature = {
-		enabled = true,
-	},
-
-	sources = {
-		default = { "lazydev", "lsp", "path", "snippets", "blade-nav", "buffer" },
-
-		providers = {
-			lazydev = {
-				name = "LazyDev",
-				module = "lazydev.integrations.blink",
-				score_offset = 100,
-			},
-			["blade-nav"] = {
-				module = "blade-nav.blink",
-				opts = {
-					close_tag_on_complete = false,
-				},
-			},
-		},
-	},
-
-	fuzzy = { implementation = "prefer_rust_with_warning" },
-})
+		fuzzy = { implementation = "prefer_rust_with_warning" },
+	})
+end)

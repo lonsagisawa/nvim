@@ -1,3 +1,5 @@
 MiniDeps.add({ source = "folke/todo-comments.nvim" })
 
-require("todo-comments").setup({})
+MiniDeps.later(function()
+	require("todo-comments").setup({})
+end)

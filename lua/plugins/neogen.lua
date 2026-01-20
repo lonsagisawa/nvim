@@ -1,5 +1,7 @@
 MiniDeps.add({ source = "danymat/neogen" })
 
-require("neogen").setup({
-	snippet_engine = "nvim",
-})
+MiniDeps.later(function()
+	require("neogen").setup({
+		snippet_engine = "nvim",
+	})
+end)

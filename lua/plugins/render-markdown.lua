@@ -1,11 +1,13 @@
 MiniDeps.add({ source = "MeanderingProgrammer/render-markdown.nvim" })
 
-require("render-markdown").setup({
-	file_types = { "markdown", "mdx", "AgenticChat" },
+MiniDeps.later(function()
+	require("render-markdown").setup({
+		file_types = { "markdown", "mdx", "AgenticChat" },
 
-	completions = {
-		blink = {
-			enabled = true,
+		completions = {
+			blink = {
+				enabled = true,
+			},
 		},
-	},
-})
+	})
+end)
