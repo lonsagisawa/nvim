@@ -13,6 +13,9 @@ MiniDeps.later(function()
 				amp = {
 					cmd = { "amp" },
 				},
+				codex = {
+					cmd = { "codex" },
+				},
 			},
 		},
 	})
