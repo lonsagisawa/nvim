@@ -16,6 +16,8 @@ MiniDeps.later(function()
 			vue = { "prettier" },
 			svelte = { "prettier" },
 			yaml = { "yamlfmt" },
+			css = { "biome", "prettier", stop_after_first = true },
+			go = { "gofmt" },
 		},
 		default_format_opts = {
 			lsp_format = "fallback",
