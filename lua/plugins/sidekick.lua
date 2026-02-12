@@ -53,6 +53,10 @@ MiniDeps.later(function()
 	end, { desc = "Sidekick Select Prompt" })
 
 	vim.keymap.set("", "<leader>ac", function()
+		require("sidekick.cli").toggle({ name = "claude", focus = true })
+	end, { desc = "Sidekick Toggle Claude Code" })
+
+	vim.keymap.set("", "<leader>ag", function()
 		require("sidekick.cli").toggle({ name = "codex", focus = true })
 	end, { desc = "Sidekick Toggle Codex" })
 
