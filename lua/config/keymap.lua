@@ -31,3 +31,7 @@ vim.keymap.set({"n", "x"}, "U", "<c-r>")
 -- https://zenn.dev/vim_jp/articles/43d021f461f3a4
 vim.keymap.set({"n", "x"}, "p", "]p`]")
 vim.keymap.set({"n", "x"}, "P", "]P`]")
+
+-- vim.pack
+vim.keymap.set({ "n", "x" }, "<leader>du", function() vim.pack.update() end, { desc = "Update plugins" })
+-- vim.keymap.set({ "n", "x" }, "<leader>dc", "<cmd>DepsClean<cr>", { desc = "Cleanup unused plugins" })
