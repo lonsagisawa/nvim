@@ -109,9 +109,6 @@ vim.o.list = true
 -- scrolloff
 vim.o.scrolloff = 12
 
--- exrc
-vim.o.exrc = true
-
 -- autohide cmdline
 vim.o.cmdheight = 0
 
