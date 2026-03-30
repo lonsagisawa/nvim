@@ -1,6 +1,8 @@
-MiniDeps.add({ source = "lewis6991/hover.nvim" })
+local later = function(f) require("mini.misc").safely('later', f) end
 
-MiniDeps.later(function()
+vim.pack.add({ "https://github.com/lewis6991/hover.nvim" })
+
+later(function()
 	require("hover.providers.lsp")
 	require("hover.providers.diagnostic")
 

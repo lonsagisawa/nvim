@@ -16,7 +16,7 @@ vim.keymap.set("v", ">", ">gv")
 
 -- LSP
 -- https://zenn.dev/botamotch/articles/21073d78bc68bf#.config%2Fnvim%2Finit.lua
-vim.keymap.set("n", "gf", "<cmd>lua vim.lsp.buf.formatting()<CR>", { desc = "Format buffer using LS" })
+vim.keymap.set("n", "gf", "<cmd>lua vim.lsp.buf.format()<CR>", { desc = "Format buffer using LS" })
 vim.keymap.set("n", "gn", "<cmd>lua vim.lsp.buf.rename()<CR>", { desc = "Refactor: rename" })
 vim.keymap.set("n", "ga", "<cmd>lua vim.lsp.buf.code_action()<CR>", { desc = "Code action" })
 vim.keymap.set("n", "ge", "<cmd>lua vim.diagnostic.open_float()<CR>")
@@ -31,3 +31,7 @@ vim.keymap.set({"n", "x"}, "U", "<c-r>")
 -- https://zenn.dev/vim_jp/articles/43d021f461f3a4
 vim.keymap.set({"n", "x"}, "p", "]p`]")
 vim.keymap.set({"n", "x"}, "P", "]P`]")
+
+-- vim.pack
+vim.keymap.set({ "n", "x" }, "<leader>du", function() vim.pack.update() end, { desc = "Update plugins" })
+-- vim.keymap.set({ "n", "x" }, "<leader>dc", "<cmd>DepsClean<cr>", { desc = "Cleanup unused plugins" })

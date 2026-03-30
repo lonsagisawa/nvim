@@ -1,4 +1,4 @@
-MiniDeps.add({ source = "catppuccin/nvim", name = "catppuccin" })
+vim.pack.add({{ src = "https://github.com/catppuccin/nvim", name = "catppuccin" }})
 
 require("catppuccin").setup({
 	flavour = "mocha",
@@ -58,3 +58,6 @@ require("catppuccin").setup({
 		}
 	end,
 })
+
+-- set colorscheme
+vim.cmd.colorscheme("catppuccin")

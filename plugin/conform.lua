@@ -1,6 +1,8 @@
-MiniDeps.add({ source = "stevearc/conform.nvim" })
+local later = function(f) require("mini.misc").safely('later', f) end
 
-MiniDeps.later(function()
+vim.pack.add({ "https://github.com/stevearc/conform.nvim" })
+
+later(function()
 	vim.keymap.set("", "<leader>f", function()
 		require("conform").format({ async = true })
 	end, { desc = "Format buffer" })

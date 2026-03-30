@@ -1,3 +1,7 @@
+vim.pack.add({
+	"https://github.com/nvim-mini/mini.nvim",
+})
+
 require("mini.basics").setup({
 	options = {
 		extra_ui = true,
@@ -55,6 +59,7 @@ require("mini.clue").setup({
 		require("mini.clue").gen_clues.registers(),
 		require("mini.clue").gen_clues.windows(),
 		require("mini.clue").gen_clues.z(),
+		{ mode = "n", keys = "gr", desc = "References" },
 	},
 })
 
@@ -110,6 +115,3 @@ vim.api.nvim_create_autocmd("BufWritePre", {
 		MiniTrailspace.trim_last_lines()
 	end,
 })
-
-vim.keymap.set({ "n", "x" }, "<leader>du", "<cmd>DepsUpdate<cr>", { desc = "Update plugins" })
-vim.keymap.set({ "n", "x" }, "<leader>dc", "<cmd>DepsClean<cr>", { desc = "Cleanup unused plugins" })

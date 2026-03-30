@@ -1,6 +1,8 @@
-MiniDeps.add({ source = "folke/sidekick.nvim" })
+local later = function(f) require("mini.misc").safely('later', f) end
 
-MiniDeps.later(function()
+vim.pack.add({ "https://github.com/folke/sidekick.nvim" })
+
+later(function()
 	require("sidekick").setup({
 		nes = {
 			enabled = false,

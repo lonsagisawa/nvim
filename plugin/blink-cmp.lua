@@ -1,10 +1,11 @@
-MiniDeps.add({
-	source = "saghen/blink.cmp",
-	depends = { "rafamadriz/friendly-snippets" },
-	checkout = "v1.8.0", -- check releases for latest tag
+local later = function(f) require("mini.misc").safely('later', f) end
+
+vim.pack.add({
+	"https://github.com/rafamadriz/friendly-snippets",
+	{ src = "https://github.com/saghen/blink.cmp", version = "v1.8.0" },
 })
 
-MiniDeps.later(function()
+later(function()
 	require("blink.cmp").setup({
 		keymap = { preset = "enter" },
 
