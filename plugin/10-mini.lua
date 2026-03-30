@@ -1,8 +1,6 @@
 vim.pack.add({
-	"https://github.com/nvim-mini/mini.nvim"
+	"https://github.com/nvim-mini/mini.nvim",
 })
-
-require("mini.deps").setup()
 
 require("mini.basics").setup({
 	options = {
