@@ -55,6 +55,7 @@ require("mini.clue").setup({
 		require("mini.clue").gen_clues.registers(),
 		require("mini.clue").gen_clues.windows(),
 		require("mini.clue").gen_clues.z(),
+		{ mode = "n", keys = "gr", desc = "References" },
 	},
 })
 

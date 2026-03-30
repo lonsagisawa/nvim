@@ -110,10 +110,14 @@ MiniDeps.later(function()
 	vim.keymap.set("", "<leader>su", function() Snacks.picker.undo() end, { desc = "Undo History" })
 	vim.keymap.set("", "<leader>uC", function() Snacks.picker.colorschemes() end, { desc = "Colorschemes" })
 
+	for _, key in ipairs({ "gra", "gri", "grn", "grr", "grt", "grx" }) do
+		pcall(vim.keymap.del, "n", key)
+	end
+
 	-- LSP pickers
 	vim.keymap.set("", "gd", function() Snacks.picker.lsp_definitions() end, { desc = "Goto Definition" })
 	vim.keymap.set("", "gD", function() Snacks.picker.lsp_declarations() end, { desc = "Goto Declaration" })
-	vim.keymap.set("", "gr", function() Snacks.picker.lsp_references() end, { desc = "References", nowait = true })
+	vim.keymap.set("", "gr", function() Snacks.picker.lsp_references() end, { desc = "References" })
 	vim.keymap.set("", "gI", function() Snacks.picker.lsp_implementations() end, { desc = "Goto Implementation" })
 	vim.keymap.set("", "gy", function() Snacks.picker.lsp_type_definitions() end, { desc = "Goto T[y]pe Definition" })
 	vim.keymap.set("", "<leader>ss", function() Snacks.picker.lsp_symbols() end, { desc = "LSP Symbols" })
