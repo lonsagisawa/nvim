@@ -1,7 +1,9 @@
 local later = function(f) require("mini.misc").safely('later', f) end
 
-vim.pack.add({ "https://github.com/Bilal2453/luvit-meta" })
-vim.pack.add({ "https://github.com/folke/lazydev.nvim" })
+vim.pack.add({
+	"https://github.com/Bilal2453/luvit-meta",
+	"https://github.com/folke/lazydev.nvim",
+})
 
 later(function()
 	require("lazydev").setup({

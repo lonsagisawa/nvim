@@ -1,7 +1,9 @@
 local later = function(f) require("mini.misc").safely('later', f) end
 
-vim.pack.add({ "https://github.com/rafamadriz/friendly-snippets" })
-vim.pack.add({{ src = "https://github.com/saghen/blink.cmp", version = "v1.8.0" }})
+vim.pack.add({
+	"https://github.com/rafamadriz/friendly-snippets",
+	{ src = "https://github.com/saghen/blink.cmp", version = "v1.8.0" },
+})
 
 later(function()
 	require("blink.cmp").setup({

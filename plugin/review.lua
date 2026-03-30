@@ -1,8 +1,10 @@
 local later = function(f) require("mini.misc").safely('later', f) end
 
-vim.pack.add({ "https://github.com/esmuellert/codediff.nvim" })
-vim.pack.add({ "https://github.com/MunifTanjim/nui.nvim" })
-vim.pack.add({ "https://github.com/georgeguimaraes/review.nvim" })
+vim.pack.add({
+	"https://github.com/esmuellert/codediff.nvim",
+	"https://github.com/MunifTanjim/nui.nvim",
+	"https://github.com/georgeguimaraes/review.nvim",
+})
 
 later(function()
 	require("review").setup()

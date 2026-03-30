@@ -1,7 +1,9 @@
 local later = function(f) require("mini.misc").safely('later', f) end
 
-vim.pack.add({ "https://github.com/nvim-lualine/lualine.nvim" })
-vim.pack.add({ "https://github.com/b0o/incline.nvim" })
+vim.pack.add({
+	"https://github.com/nvim-lualine/lualine.nvim",
+	"https://github.com/b0o/incline.nvim",
+})
 
 later(function()
 	require("incline").setup({

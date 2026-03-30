@@ -6,8 +6,10 @@ vim.api.nvim_create_autocmd("PackChanged", { callback = function(ev)
 	end
 end })
 
-vim.pack.add({{ src = "https://github.com/nvim-treesitter/nvim-treesitter", version = "main" }})
-vim.pack.add({{ src = "https://github.com/nvim-treesitter/nvim-treesitter-textobjects", version = "main" }})
+vim.pack.add({
+	{ src = "https://github.com/nvim-treesitter/nvim-treesitter", version = "main" },
+	{ src = "https://github.com/nvim-treesitter/nvim-treesitter-textobjects", version = "main" },
+})
 
 vim.api.nvim_create_autocmd("FileType", {
 	callback = function(args)
