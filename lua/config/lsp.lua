@@ -1,7 +1,9 @@
 -- Plugins
-MiniDeps.add({ source = "neovim/nvim-lspconfig" })
-MiniDeps.add({ source = "mason-org/mason.nvim" })
-MiniDeps.add({ source = "mason-org/mason-lspconfig.nvim" })
+vim.pack.add({
+	"https://github.com/neovim/nvim-lspconfig",
+	"https://github.com/mason-org/mason.nvim",
+	"https://github.com/mason-org/mason-lspconfig.nvim",
+})
 
 local mason_servers = {
 	"astro",

@@ -1,11 +1,9 @@
-MiniDeps.add({
-	source = "b0o/incline.nvim",
-	depends = {
-		"nvim-lualine/lualine.nvim",
-	},
-})
+local later = function(f) require("mini.misc").safely('later', f) end
 
-MiniDeps.later(function()
+vim.pack.add({ "https://github.com/nvim-lualine/lualine.nvim" })
+vim.pack.add({ "https://github.com/b0o/incline.nvim" })
+
+later(function()
 	require("incline").setup({
 		window = {
 			padding = 0,

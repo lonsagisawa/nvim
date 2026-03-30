@@ -1,6 +1,8 @@
-MiniDeps.add({ source = "mfussenegger/nvim-lint" })
+local later = function(f) require("mini.misc").safely('later', f) end
 
-MiniDeps.later(function()
+vim.pack.add({ "https://github.com/mfussenegger/nvim-lint" })
+
+later(function()
 	require("lint").linters_by_ft = {
 		php = { "phpcs", "phpstan" },
 		lua = { "selene" },

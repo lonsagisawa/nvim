@@ -1,6 +1,8 @@
-MiniDeps.add({ source = "folke/trouble.nvim" })
+local later = function(f) require("mini.misc").safely('later', f) end
 
-MiniDeps.later(function()
+vim.pack.add({ "https://github.com/folke/trouble.nvim" })
+
+later(function()
 	require("trouble").setup({})
 
 	vim.keymap.set("", "<leader>xx", "<cmd>Trouble diagnostics toggle<cr>", { desc = "Diagnostics (Trouble)" })

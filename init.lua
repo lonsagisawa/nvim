@@ -12,7 +12,7 @@ vim.g.maplocalleader = " "
 require("vim._core.ui2").enable({})
 
 -- setup lsp
--- require("config.lsp")
+require("config.lsp")
 
 -- highlight on search
 vim.o.hlsearch = false

@@ -1,6 +1,8 @@
-MiniDeps.add({ source = "monaqa/dial.nvim" })
+local later = function(f) require("mini.misc").safely('later', f) end
 
-MiniDeps.later(function()
+vim.pack.add({ "https://github.com/monaqa/dial.nvim" })
+
+later(function()
 	vim.keymap.set("n", "<C-a>", function()
 		require("dial.map").manipulate("increment", "normal")
 	end)

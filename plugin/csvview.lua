@@ -1,6 +1,8 @@
-MiniDeps.add({ source = "hat0uma/csvview.nvim" })
+local later = function(f) require("mini.misc").safely('later', f) end
 
-MiniDeps.later(function()
+vim.pack.add({ "https://github.com/hat0uma/csvview.nvim" })
+
+later(function()
 	require("csvview").setup({
 		parser = { comments = { "#", "//" } },
 		keymaps = {
