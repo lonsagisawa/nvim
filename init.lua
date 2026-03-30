@@ -12,7 +12,7 @@ vim.g.maplocalleader = " "
 require("vim._core.ui2").enable({})
 
 -- setup lsp
-require("config.lsp")
+require("lsp")
 
 -- highlight on search
 vim.o.hlsearch = false
@@ -80,4 +80,4 @@ vim.o.shell = "fish"
 
 vim.o.winborder = "rounded"
 
-require("config.keymap")
+require("keymap")
