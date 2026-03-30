@@ -5,8 +5,11 @@ vim.loader.enable()
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
 
+-- leader
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
+
+require("vim._core.ui2").enable({})
 
 -- mini.nvim, mini.deps initialization
 local path_package = vim.fn.stdpath("data") .. "/site"
@@ -109,7 +112,6 @@ vim.o.list = true
 -- scrolloff
 vim.o.scrolloff = 12
 
--- autohide cmdline
 vim.o.cmdheight = 0
 
 vim.o.winblend = 0
