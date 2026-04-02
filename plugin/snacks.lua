@@ -1,4 +1,6 @@
-local later = function(f) require("mini.misc").safely('later', f) end
+local later = function(f)
+	require("mini.misc").safely("later", f)
+end
 
 vim.pack.add({ "https://github.com/folke/snacks.nvim" })
 
@@ -60,6 +62,18 @@ later(function()
 		notifier = {
 			style = "minimal",
 			top_down = false,
+		},
+		statuscolumn = {
+			left = { "mark", "sign" },
+			right = { "fold", "git" },
+			folds = {
+				open = true, -- show open fold icons
+				git_hl = true, -- use Git Signs hl for fold icons
+			},
+			git = {
+				patterns = { "GitSign", "MiniDiffSign" },
+			},
+			refresh = 50,
 		},
 		zen = {
 			enabled = true,
