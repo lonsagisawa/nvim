@@ -18,6 +18,9 @@ later(function()
 				codex = {
 					cmd = { "codex" },
 				},
+				pi = {
+					cmd = { "pi" },
+				},
 			},
 		},
 	})
@@ -58,10 +61,6 @@ later(function()
 		require("sidekick.cli").toggle({ name = "claude", focus = true })
 	end, { desc = "Sidekick Toggle Claude Code" })
 
-	vim.keymap.set("", "<leader>ag", function()
-		require("sidekick.cli").toggle({ name = "codex", focus = true })
-	end, { desc = "Sidekick Toggle Codex" })
-
 	vim.keymap.set("", "<leader>ao", function()
 		require("sidekick.cli").toggle({ name = "opencode", focus = true })
 	end, { desc = "Sidekick Toggle opencode" })
@@ -69,4 +68,8 @@ later(function()
 	vim.keymap.set("", "<leader>amp", function()
 		require("sidekick.cli").toggle({ name = "amp", focus = true })
 	end, { desc = "Sidekick Toggle amp" })
+
+	vim.keymap.set("", "<leader>ap", function()
+		require("sidekick.cli").toggle({ name = "pi", focus = true })
+	end, { desc = "Sidekick Toggle pi" })
 end)
