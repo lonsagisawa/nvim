@@ -60,7 +60,7 @@ later(function()
 			enabled = true,
 		},
 		notifier = {
-			style = "minimal",
+			style = "compact",
 			top_down = false,
 		},
 		statuscolumn = {
