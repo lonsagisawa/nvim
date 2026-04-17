@@ -59,10 +59,6 @@ later(function()
 		terminal = {
 			enabled = true,
 		},
-		notifier = {
-			style = "compact",
-			top_down = false,
-		},
 		statuscolumn = {
 			left = { "mark", "sign" },
 			right = { "fold", "git" },
