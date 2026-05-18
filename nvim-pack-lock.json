@@ -8,10 +8,6 @@
       "rev": "43dd88ad4024b1945906887521057c73d3b0d84e",
       "src": "https://github.com/stevearc/aerial.nvim"
     },
-    "blade-nav.nvim": {
-      "rev": "7ac80b57dbeae975a795fe7ce94ad168dfda7ffa",
-      "src": "https://github.com/ricardoramirezr/blade-nav.nvim"
-    },
     "blink.cmp": {
       "rev": "b19413d214068f316c78978b08264ed1c41830ec",
       "src": "https://github.com/saghen/blink.cmp",

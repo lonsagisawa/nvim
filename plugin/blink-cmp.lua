@@ -58,19 +58,13 @@ later(function()
 		},
 
 		sources = {
-			default = { "lazydev", "lsp", "path", "snippets", "blade-nav", "buffer" },
+			default = { "lazydev", "lsp", "path", "snippets", "buffer" },
 
 			providers = {
 				lazydev = {
 					name = "LazyDev",
 					module = "lazydev.integrations.blink",
 					score_offset = 100,
-				},
-				["blade-nav"] = {
-					module = "blade-nav.blink",
-					opts = {
-						close_tag_on_complete = false,
-					},
 				},
 			},
 		},
