@@ -30,6 +30,10 @@ function M.execute(action)
 		Snacks.terminal.open(action.cmd, {
 			cwd = project.root,
 			interactive = true, -- auto_close on exit
+			win = {
+				position = "bottom",
+				height = 0.3,
+			},
 		})
 	elseif action.exec == "background" then
 		vim.system(action.cmd, { cwd = project.root }, function(result)
