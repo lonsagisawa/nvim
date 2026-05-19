@@ -11,9 +11,9 @@ M.actions = {
 	{ name = "Stop", cmd = { "ddev", "stop" }, exec = "terminal" },
 	{ name = "Restart", cmd = { "ddev", "restart" }, exec = "terminal" },
 	{ name = "Launch", cmd = { "ddev", "launch" }, exec = "background" },
-	{ name = "DBeaver", cmd = { "ddev", "dbeaver" }, exec = "background" },
-	{ name = "TablePlus", cmd = { "ddev", "tableplus" }, exec = "background" },
-	{ name = "Sequel Ace", cmd = { "ddev", "sequelace" }, exec = "background" },
+	{ name = "Open DBeaver", cmd = { "ddev", "dbeaver" }, exec = "background" },
+	{ name = "Open TablePlus", cmd = { "ddev", "tableplus" }, exec = "background" },
+	{ name = "Open Sequel Ace", cmd = { "ddev", "sequelace" }, exec = "background" },
 }
 
 --- Execute a ddev action
