@@ -22,7 +22,7 @@ later(function()
 				"diagnostics",
 			},
 			lualine_c = { "aerial" },
-			lualine_x = {},
+			lualine_x = { require("ddev.lualine").lualine_component },
 			lualine_y = {},
 			lualine_z = {
 				"location",
