@@ -7,6 +7,10 @@ function M.setup(opts)
 
 	local lualine = require("ddev.lualine")
 	lualine.setup_highlights()
+	vim.api.nvim_create_autocmd("ColorScheme", {
+		group = vim.api.nvim_create_augroup("DdevHighlights", { clear = true }),
+		callback = lualine.setup_highlights,
+	})
 
 	-- Register user command
 	vim.api.nvim_create_user_command("Ddev", function()

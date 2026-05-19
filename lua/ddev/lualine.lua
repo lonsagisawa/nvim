@@ -25,9 +25,9 @@ end
 
 --- Setup highlight groups
 function M.setup_highlights()
-	vim.api.nvim_set_hl(0, "DdevRunning", { fg = "#a6e3a1" }) -- Catppuccin green
-	vim.api.nvim_set_hl(0, "DdevPaused", { fg = "#f9e2af" }) -- Catppuccin yellow
-	vim.api.nvim_set_hl(0, "DdevStopped", { fg = "#f38ba8" }) -- Catppuccin red
+	vim.api.nvim_set_hl(0, "DdevRunning", { link = "DiagnosticOk" })
+	vim.api.nvim_set_hl(0, "DdevPaused", { link = "DiagnosticWarn" })
+	vim.api.nvim_set_hl(0, "DdevStopped", { link = "DiagnosticError" })
 end
 
 --- Lualine component definition (for use in lualine sections)
