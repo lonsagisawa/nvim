@@ -5,15 +5,26 @@ local M = {}
 ---@field cmd string[] Command to execute
 ---@field exec "terminal"|"background" Execution method
 
+---@type table<string, ddev.Action>
+local actions = {
+	start = { name = "Start", cmd = { "ddev", "start" }, exec = "terminal" },
+	stop = { name = "Stop", cmd = { "ddev", "stop" }, exec = "terminal" },
+	restart = { name = "Restart", cmd = { "ddev", "restart" }, exec = "terminal" },
+	launch = { name = "Launch", cmd = { "ddev", "launch" }, exec = "background" },
+	open_dbeaver = { name = "Open DBeaver", cmd = { "ddev", "dbeaver" }, exec = "background" },
+	open_tableplus = { name = "Open TablePlus", cmd = { "ddev", "tableplus" }, exec = "background" },
+	open_sequel_ace = { name = "Open Sequel Ace", cmd = { "ddev", "sequelace" }, exec = "background" },
+}
+
 ---@type ddev.Action[]
 M.actions = {
-	{ name = "Start", cmd = { "ddev", "start" }, exec = "terminal" },
-	{ name = "Stop", cmd = { "ddev", "stop" }, exec = "terminal" },
-	{ name = "Restart", cmd = { "ddev", "restart" }, exec = "terminal" },
-	{ name = "Launch", cmd = { "ddev", "launch" }, exec = "background" },
-	{ name = "Open DBeaver", cmd = { "ddev", "dbeaver" }, exec = "background" },
-	{ name = "Open TablePlus", cmd = { "ddev", "tableplus" }, exec = "background" },
-	{ name = "Open Sequel Ace", cmd = { "ddev", "sequelace" }, exec = "background" },
+	actions.start,
+	actions.stop,
+	actions.restart,
+	actions.launch,
+	actions.open_dbeaver,
+	actions.open_tableplus,
+	actions.open_sequel_ace,
 }
 
 --- Execute a ddev action
@@ -47,6 +58,41 @@ function M.execute(action)
 			end
 		end)
 	end
+end
+
+--- Run `ddev start`
+function M.start()
+	M.execute(actions.start)
+end
+
+--- Run `ddev stop`
+function M.stop()
+	M.execute(actions.stop)
+end
+
+--- Run `ddev restart`
+function M.restart()
+	M.execute(actions.restart)
+end
+
+--- Run `ddev launch`
+function M.launch()
+	M.execute(actions.launch)
+end
+
+--- Run `ddev dbeaver`
+function M.open_dbeaver()
+	M.execute(actions.open_dbeaver)
+end
+
+--- Run `ddev tableplus`
+function M.open_tableplus()
+	M.execute(actions.open_tableplus)
+end
+
+--- Run `ddev sequelace`
+function M.open_sequel_ace()
+	M.execute(actions.open_sequel_ace)
 end
 
 --- Open the DDEV actions picker
