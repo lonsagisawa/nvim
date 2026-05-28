@@ -15,7 +15,6 @@ local mason_servers = {
 	"html",
 	"lua_ls",
 	"marksman",
-	"phpantom_lsp",
 	"svelte",
 	"tailwindcss",
 	"vtsls",
@@ -30,7 +29,7 @@ if not is_aarch64_linux then
 end
 
 local non_mason_servers = {
-	-- Masonのリポジトリに入っていないLSPが出てきたら
+	"phpantom_lsp",
 }
 
 require("mason").setup()
