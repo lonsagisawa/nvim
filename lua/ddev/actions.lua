@@ -37,27 +37,65 @@ function M.execute(action)
 		return
 	end
 
-	if action.exec == "terminal" then
-		Snacks.terminal.open(action.cmd, {
+	local function do_execute()
+		if action.exec == "terminal" then
+			Snacks.terminal.open(action.cmd, {
+				cwd = project.root,
+				interactive = true, -- auto_close on exit
+				win = {
+					position = "bottom",
+					height = 0.3,
+				},
+			})
+		elseif action.exec == "background" then
+			vim.system(action.cmd, { cwd = project.root }, function(result)
+				if result.code ~= 0 then
+					vim.schedule(function()
+						vim.notify(
+							"Command failed: " .. table.concat(action.cmd, " ") .. "\n" .. (result.stderr or ""),
+							vim.log.levels.ERROR
+						)
+					end)
+				end
+			end)
+		end
+	end
+
+	-- Auto-start for background actions that require a running DDEV instance
+	if action.exec == "background" and project.status ~= "running" then
+		vim.notify(
+			"DDEV is not running. Starting DDEV before " .. action.name .. "...",
+			vim.log.levels.INFO
+		)
+		local start_term = Snacks.terminal.open({ "ddev", "start" }, {
 			cwd = project.root,
-			interactive = true, -- auto_close on exit
+			interactive = true,
+			auto_close = false,
 			win = {
 				position = "bottom",
 				height = 0.3,
 			},
 		})
-	elseif action.exec == "background" then
-		vim.system(action.cmd, { cwd = project.root }, function(result)
-			if result.code ~= 0 then
+		vim.api.nvim_create_autocmd("TermClose", {
+			buffer = start_term.buf,
+			once = true,
+			callback = function()
 				vim.schedule(function()
-					vim.notify(
-						"Command failed: " .. table.concat(action.cmd, " ") .. "\n" .. (result.stderr or ""),
-						vim.log.levels.ERROR
-					)
+					local exit_status = type(vim.v.event) == "table" and vim.v.event.status or 0
+					if exit_status ~= 0 then
+						vim.notify("DDEV start failed. Check the terminal for errors.", vim.log.levels.ERROR)
+						return
+					end
+					start_term:close()
+					vim.notify("DDEV started. Running " .. action.name .. "...", vim.log.levels.INFO)
+					do_execute()
 				end)
-			end
-		end)
+			end,
+		})
+		return
 	end
+
+	do_execute()
 end
 
 --- Run `ddev start`
