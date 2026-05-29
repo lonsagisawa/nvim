@@ -1,7 +1,14 @@
+---@class ddev.ServiceInfo
+---@field full_name string コンテナのフルネーム
+---@field https_url string|nil
+---@field http_url string|nil
+
 ---@class ddev.ProjectInfo
 ---@field root string Project root directory (contains .ddev/)
 ---@field name string Project name
 ---@field status string "running" | "paused" | "stopped"
+---@field services table<string, ddev.ServiceInfo>|nil サービス一覧
+---@field mailpit_url string|nil Mailpit の URL
 
 local M = {}
 
@@ -63,11 +70,31 @@ function M.fetch_status(project_root, callback)
 				return
 			end
 
+			-- サービス情報をパース
+			local services = nil
+			if type(raw.services) == "table" then
+				services = {}
+				for svc_name, svc_info in pairs(raw.services) do
+					if type(svc_info) == "table" then
+						services[svc_name] = {
+							full_name = svc_info.full_name or "",
+							https_url = svc_info.https_url,
+							http_url = svc_info.http_url,
+						}
+					end
+				end
+			end
+
+			-- Mailpit URL を解決 (HTTPS 優先)
+			local mailpit_url = raw.mailpit_https_url or raw.mailpit_http_url
+
 			vim.schedule(function()
 				callback({
 					root = project_root,
 					name = raw.name,
 					status = raw.status or "stopped",
+					services = services,
+					mailpit_url = mailpit_url,
 				})
 			end)
 		end

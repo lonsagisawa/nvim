@@ -1,11 +1,17 @@
 ---@class ddev.Config
 ---@field refresh_interval integer Status update interval in seconds (default: 10)
+---@field terminal_win? snacks.win.Config Terminal window configuration for Snacks.terminal
 
 local M = {}
 
 ---@type ddev.Config
 local defaults = {
 	refresh_interval = 10,
+	terminal_win = {
+		position = "float",
+		width = 0.9,
+		height = 0.9,
+	},
 }
 
 ---@type ddev.Config

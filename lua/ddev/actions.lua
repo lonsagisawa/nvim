@@ -14,6 +14,26 @@ local actions = {
 	open_dbeaver = { name = "Open DBeaver", cmd = { "ddev", "dbeaver" }, exec = "background" },
 	open_tableplus = { name = "Open TablePlus", cmd = { "ddev", "tableplus" }, exec = "background" },
 	open_sequel_ace = { name = "Open Sequel Ace", cmd = { "ddev", "sequelace" }, exec = "background" },
+	open_terminal = {
+		name = "Open DDEV Terminal",
+		cmd = { "ddev", "ssh" },
+		exec = "terminal",
+		terminal_opts = {
+			position = "float",
+			width = 0.9,
+			height = 0.9,
+		},
+	},
+	open_db_terminal = {
+		name = "Open DB Terminal",
+		cmd = { "ddev", "ssh", "-s", "db" },
+		exec = "terminal",
+		terminal_opts = {
+			position = "float",
+			width = 0.9,
+			height = 0.9,
+		},
+	},
 }
 
 ---@type ddev.Action[]
@@ -22,6 +42,8 @@ M.actions = {
 	actions.stop,
 	actions.restart,
 	actions.launch,
+	actions.open_terminal,
+	actions.open_db_terminal,
 	actions.open_dbeaver,
 	actions.open_tableplus,
 	actions.open_sequel_ace,
@@ -39,13 +61,14 @@ function M.execute(action)
 
 	local function do_execute()
 		if action.exec == "terminal" then
+			local terminal_opts = action.terminal_opts or {
+				position = "bottom",
+				height = 0.3,
+			}
 			Snacks.terminal.open(action.cmd, {
 				cwd = project.root,
 				interactive = true, -- auto_close on exit
-				win = {
-					position = "bottom",
-					height = 0.3,
-				},
+				win = terminal_opts,
 			})
 		elseif action.exec == "background" then
 			vim.system(action.cmd, { cwd = project.root }, function(result)
@@ -131,6 +154,21 @@ end
 --- Run `ddev sequelace`
 function M.open_sequel_ace()
 	M.execute(actions.open_sequel_ace)
+end
+
+--- Open DDEV terminal
+function M.open_terminal()
+	M.execute(actions.open_terminal)
+end
+
+--- Open DB terminal
+function M.open_db_terminal()
+	M.execute(actions.open_db_terminal)
+end
+
+--- Open DDEV services picker
+function M.open_services()
+	require("ddev.services").open_picker()
 end
 
 --- Open the DDEV actions picker
