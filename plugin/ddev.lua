@@ -1,5 +1,7 @@
 local later = function(f) require("mini.misc").safely('later', f) end
 
+vim.pack.add({ "https://github.com/lonsagisawa/ddev.nvim" })
+
 later(function()
 	require("ddev").setup({
 		refresh_interval = 10,
