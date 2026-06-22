@@ -53,9 +53,6 @@ later(function()
 				},
 			},
 		},
-		input = {
-			enabled = true,
-		},
 		terminal = {
 			enabled = true,
 		},

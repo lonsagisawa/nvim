@@ -15,6 +15,7 @@ require("mini.surround").setup()
 require("mini.move").setup()
 require("mini.trailspace").setup()
 require("mini.cmdline").setup()
+require("mini.input").setup()
 
 MiniIcons.mock_nvim_web_devicons()
 
