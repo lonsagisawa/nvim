@@ -17,6 +17,7 @@ local mason_servers = {
 	"marksman",
 	"svelte",
 	"tailwindcss",
+	"tree-sitter-cli",
 	"vtsls",
 	"vue_ls",
 }
