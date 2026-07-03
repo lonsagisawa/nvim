@@ -3,6 +3,7 @@ vim.pack.add({
 	"https://github.com/neovim/nvim-lspconfig",
 	"https://github.com/mason-org/mason.nvim",
 	"https://github.com/mason-org/mason-lspconfig.nvim",
+	"https://github.com/WhoIsSethDaniel/mason-tool-installer.nvim",
 })
 
 local mason_servers = {
@@ -17,7 +18,6 @@ local mason_servers = {
 	"marksman",
 	"svelte",
 	"tailwindcss",
-	"tree-sitter-cli",
 	"vtsls",
 	"vue_ls",
 }
@@ -37,6 +37,14 @@ require("mason").setup()
 require("mason-lspconfig").setup({
 	ensure_installed = mason_servers,
 	automatic_enable = true,
+})
+require("mason-tool-installer").setup({
+	ensure_installed = {
+		"tree-sitter-cli",
+
+		-- formatters
+		"stylua",
+	}
 })
 
 vim.lsp.enable(non_mason_servers)
