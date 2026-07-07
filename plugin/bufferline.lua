@@ -6,7 +6,7 @@ vim.pack.add({ "https://github.com/akinsho/bufferline.nvim" })
 
 later(function()
 	require("bufferline").setup({
-		highlights = require("catppuccin.special.bufferline").get_theme(),
+		highlights = require("rose-pine.plugins.bufferline"),
 		options = {
 			diagnostics = "nvim_lsp",
 		},

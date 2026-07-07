@@ -6,6 +6,7 @@ later(function()
 	require("lualine").setup({
 		options = {
 			globalstatus = true,
+			theme = "rose-pine",
 		},
 		sections = {
 			lualine_a = {
