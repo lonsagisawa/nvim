@@ -7,8 +7,8 @@ vim.api.nvim_create_autocmd("PackChanged", { callback = function(ev)
 end })
 
 vim.pack.add({
-	{ src = "https://github.com/nvim-treesitter/nvim-treesitter", pin = "4916d6592ede8c07973490d2f187e07dfefac" },
-	{ src = "https://github.com/nvim-treesitter/nvim-treesitter-textobjects", pin = "93d60a475f0b08a8eceb99255863977d3a25f310" },
+	{ src = "https://github.com/nvim-treesitter/nvim-treesitter" },
+	{ src = "https://github.com/nvim-treesitter/nvim-treesitter-textobjects" },
 })
 
 vim.api.nvim_create_autocmd("FileType", {
