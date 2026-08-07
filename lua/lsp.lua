@@ -22,15 +22,9 @@ local mason_servers = {
 	"vue_ls",
 }
 
--- laravel_lsはaarch64 Linuxに対応していないため除外する
-local uname = vim.uv.os_uname()
-local is_aarch64_linux = uname.sysname == "Linux" and (uname.machine == "aarch64" or uname.machine == "arm64")
-if not is_aarch64_linux then
-	table.insert(mason_servers, "laravel_ls")
-end
-
 local non_mason_servers = {
 	"phpantom_lsp",
+	"laravel_lsp",
 }
 
 require("mason").setup()
