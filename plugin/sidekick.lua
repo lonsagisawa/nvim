@@ -65,9 +65,9 @@ later(function()
 		require("sidekick.cli").toggle({ name = "opencode", focus = true })
 	end, { desc = "Sidekick Toggle opencode" })
 
-	vim.keymap.set("", "<leader>amp", function()
-		require("sidekick.cli").toggle({ name = "amp", focus = true })
-	end, { desc = "Sidekick Toggle amp" })
+	vim.keymap.set("", "<leader>ag", function()
+		require("sidekick.cli").toggle({ name = "codex", focus = true })
+	end, { desc = "Sidekick Toggle codex" })
 
 	vim.keymap.set("", "<leader>ap", function()
 		require("sidekick.cli").toggle({ name = "pi", focus = true })
