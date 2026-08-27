@@ -16,6 +16,7 @@ local mason_servers = {
 	"html",
 	"lua_ls",
 	"marksman",
+	"phpantom_lsp",
 	"svelte",
 	"tailwindcss",
 	"vtsls",
@@ -23,7 +24,6 @@ local mason_servers = {
 }
 
 local non_mason_servers = {
-	"phpantom_lsp",
 	"laravel_lsp",
 }
 
